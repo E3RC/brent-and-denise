@@ -1,0 +1,14 @@
+{
+  "schema_version": 2,
+  "active_work_id": "blog-website-exec",
+  "works": {
+    "blog-website-exec": {
+      "work_id": "blog-website-exec",
+      "active_plan": ".omo/plans/blog-website.md",
+      "plan_name": "blog-website",
+      "session_ids": ["ses_main"],
+      "status": "active",
+      "worktree_path": null
+    }
+  }
+}
