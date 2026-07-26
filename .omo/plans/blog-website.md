@@ -6,7 +6,7 @@ A static HTML/CSS/JS blog website for **brentanddenise.com** — a couple docume
 
 **The timeline context captured**: Denise retires Dec 2027 (17-month horizon), Brent has 5 years. Content themes will reflect this countdown/runway narrative.
 
-**CMS update**: The repo now includes a Decap CMS-ready `/admin/` path for browser-based editing of blog posts plus contact/social settings. It still needs a GitHub OAuth bridge deployed for Cloudflare Pages before production login will work.
+**CMS update**: The repo now includes a Decap CMS-ready `/admin/` path for browser-based editing of blog posts plus contact/social settings. It also includes the Cloudflare Worker OAuth bridge in `cloudflare/cms-auth-worker/`; production login still needs the GitHub OAuth app credentials added as Worker secrets and the Worker deployed.
 
 **What it will NOT do**: No e-commerce, no paid memberships, no server-side processing, no database.
 
@@ -37,7 +37,7 @@ A static HTML/CSS/JS blog website for **brentanddenise.com** — a couple docume
 - Performance: Lighthouse scores 90+ all categories
 
 **Out of scope:**
-- Full CMS production auth until the Decap/GitHub OAuth bridge is configured. The `/admin/` UI and content schema are present, but Cloudflare Pages needs the OAuth bridge before Brent and Denise can sign in from the browser.
+- Full CMS production auth until the Decap/GitHub OAuth bridge is deployed. The `/admin/` UI, content schema, and Worker code are present, but Cloudflare still needs the GitHub OAuth app secrets before Brent and Denise can sign in from the browser.
 - Paid memberships or subscriptions
 - E-commerce or product sales
 - Server-side rendering or dynamic server (note: this means post-specific OG tags for social sharing are unavailable — see Known trade-offs)
