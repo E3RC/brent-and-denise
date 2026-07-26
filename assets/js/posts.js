@@ -4,10 +4,21 @@ window.BlogPosts = (function () {
   var posts = [];
 
   function init() {
-    return fetch('assets/data/posts.json')
-      .then(function (response) { return response.json(); })
+    var controller = new AbortController();
+    var timer = setTimeout(function () { controller.abort(); }, 8000);
+
+    return fetch('/assets/data/posts.json', { signal: controller.signal })
+      .then(function (response) {
+        clearTimeout(timer);
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        return response.json();
+      })
       .then(function (data) {
         posts = data.posts || [];
+        return posts;
+      })
+      .catch(function (err) {
+        posts = [];
         return posts;
       });
   }
