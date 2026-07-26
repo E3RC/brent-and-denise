@@ -5,6 +5,17 @@
   var themeToggle = document.getElementById('theme-toggle');
   var html = document.documentElement;
 
+  function setCookie(name, value, days) {
+    var d = new Date();
+    d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+  }
+
+  function getCookie(name) {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+
   function getCurrentTheme() {
     return html.getAttribute('data-theme') || 'light';
   }
@@ -14,6 +25,7 @@
   function setTheme(theme) {
     html.setAttribute('data-theme', theme);
     window.__isDark = theme === 'dark';
+    setCookie('theme', theme, 365);
   }
 
   function toggleTheme() {
