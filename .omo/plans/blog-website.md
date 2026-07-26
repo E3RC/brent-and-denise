@@ -81,7 +81,7 @@ Wave 5 (Deployment): TODO-11 (repo must exist) → TODO-12 (everything must be c
 
 ### Wave 1: Foundation
 
-#### TODO-1: Initialize git repo and project scaffold
+#### TODO-1: ✅ Initialize git repo and project scaffold
 - **References**: Project root at `C:\Scripts\Brent and Denise\`
 - **Paths created**:
   - `C:\Scripts\Brent and Denise\.gitignore`
@@ -109,7 +109,7 @@ Wave 5 (Deployment): TODO-11 (repo must exist) → TODO-12 (everything must be c
 - **QA failure**: Missing files → create them
 - **Commit**: `feat: initial project scaffold`
 
-#### TODO-2: Build CSS design system
+#### TODO-2: ✅ Build CSS design system
 - **References**: AGENTS.md (CSS custom properties, clamp() scale, light+dark mode, 375/768/1024 breakpoints, no hardcoded values)
 - **File**: `assets/css/style.css`
 - **Actions**:
@@ -133,7 +133,7 @@ Wave 5 (Deployment): TODO-11 (repo must exist) → TODO-12 (everything must be c
 
 ### Wave 2: Shell + Pages
 
-#### TODO-3: Build site shell (header, footer, navigation, hash routing)
+#### TODO-3: ✅ Build site shell (header, footer, navigation, hash routing)
 - **References**: AGENTS.md (single HTML entry, hash-based routing, 44×44px touch targets, no localStorage)
 - **Files**: `index.html`, `assets/js/app.js`
 - **Actions**:
@@ -152,7 +152,7 @@ Wave 5 (Deployment): TODO-11 (repo must exist) → TODO-12 (everything must be c
 - **QA failure**: Clicking nav link does nothing → check hashchange listener; dark mode not working → check data-theme attribute setter
 - **Commit**: `feat: add site shell with hash routing and dark mode`
 
-#### TODO-4: Build Home page
+#### TODO-4: ✅ Build Home page
 - **References**: Draft topology C4
 - **File**: `index.html` (`#view-home` section)
 - **Actions**:
@@ -166,7 +166,7 @@ Wave 5 (Deployment): TODO-11 (repo must exist) → TODO-12 (everything must be c
 - **QA failure**: Hero missing → check section content; CTA links wrong → fix href values
 - **Commit**: `feat: add home page with hero and newsletter CTA`
 
-#### TODO-5: Build About page
+#### TODO-5: ✅ Build About page
 - **References**: User story — Denise retires Dec 2027, Brent has 5 years, moving abroad to save costs
 - **File**: `index.html` (`#view-about` section)
 - **Actions**:
@@ -185,7 +185,7 @@ Wave 5 (Deployment): TODO-11 (repo must exist) → TODO-12 (everything must be c
 
 ### Wave 3: Blog System
 
-#### TODO-6: Create blog post data structure and sample posts
+#### TODO-6: ✅ Create blog post data structure and sample posts
 - **References**: Posts stored as JSON for static consumption
 - **Files**: `assets/data/posts.json`, `assets/js/posts.js`
 - **Actions**:
@@ -233,7 +233,7 @@ Wave 5 (Deployment): TODO-11 (repo must exist) → TODO-12 (everything must be c
 - **QA failure**: JSON parse error → fix trailing commas or syntax; function undefined → check export
 - **Commit**: `feat: add blog data structure and post loader`
 
-#### TODO-7: Build blog listing page and post detail view
+#### TODO-7: ✅ Build blog listing page and post detail view
 - **References**: AGENTS.md (hash-based routing, max --text-xl heading, no colored side borders, no gradient text)
 - **File**: `index.html` (`#view-blog` section), `assets/js/app.js` (routing updates)
 - **Actions**:
@@ -263,7 +263,7 @@ Wave 5 (Deployment): TODO-11 (repo must exist) → TODO-12 (everything must be c
 
 ### Wave 4: Pages + Integration
 
-#### TODO-8: Build Contact page and Resources page
+#### TODO-8: ✅ Build Contact page and Resources page
 - **References**: AGENTS.md (no localStorage/sessionStorage, 44×44px touch targets, skeleton loading)
 - **File**: `index.html` (sections `#view-contact` and `#view-resources`)
 - **Actions**:
@@ -292,7 +292,7 @@ Wave 5 (Deployment): TODO-11 (repo must exist) → TODO-12 (everything must be c
 - **QA failure**: Form not submitting → check form action; external links missing rel → add `target="_blank" rel="noopener noreferrer"`
 - **Commit**: `feat: add contact page and resources page`
 
-#### TODO-9: Integrate social media and newsletter
+#### TODO-9: ✅ Integrate social media and newsletter
 - **References**: Librarian research (Instagram embed, Kit newsletter, social feed widgets)
 - **File**: `index.html`, `assets/js/app.js`
 - **Actions**:
@@ -317,7 +317,7 @@ Wave 5 (Deployment): TODO-11 (repo must exist) → TODO-12 (everything must be c
 - **QA failure**: Link opens in same tab → add `target="_blank"`; clipboard API fails → add fallback "Link copied!" message; icon missing → check HTML structure
 - **Commit**: `feat: integrate social media links and newsletter signup`
 
-#### TODO-10: Add analytics and SEO polish
+#### TODO-10: ✅ Add analytics and SEO polish
 - **References**: Cloudflare Web Analytics (privacy-first), Open Graph tags, semantic HTML
 - **File**: `index.html` (`<head>`), all page content sections
 - **Actions**:

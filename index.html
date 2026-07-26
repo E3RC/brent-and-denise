@@ -3,7 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brent &amp; Denise</title>
+  <title>Brent &amp; Denise — Retiring Abroad</title>
+  <meta name="description" content="Follow Brent &amp; Denise as we plan our retirement, navigate the move abroad, and build a new life outside the US.">
+  <meta property="og:title" content="Brent &amp; Denise — Retiring Abroad">
+  <meta property="og:description" content="Follow Brent &amp; Denise as we plan our retirement, navigate the move abroad, and build a new life outside the US.">
+  <meta property="og:image" content="https://brentanddenise.com/assets/img/og-image.jpg">
+  <meta property="og:url" content="https://brentanddenise.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Brent &amp; Denise">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Brent &amp; Denise — Retiring Abroad">
+  <meta name="twitter:description" content="Follow Brent &amp; Denise as we plan our retirement, navigate the move abroad, and build a new life outside the US.">
+  <meta name="twitter:image" content="https://brentanddenise.com/assets/img/og-image.jpg">
+  <link rel="canonical" href="https://brentanddenise.com">
+  <link rel="alternate" type="application/atom+xml" title="Brent &amp; Denise — Retiring Abroad" href="/feed.xml">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   <script>
     (function () {
       var theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -12,8 +26,1225 @@
   </script>
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" href="/favicon.ico" type="image/svg+xml">
+  <style>
+    header {
+      border-bottom: 1px solid var(--color-border);
+      padding: var(--space-3) 0;
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      gap: var(--space-6);
+    }
+
+    .site-logo {
+      font-family: var(--font-heading);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-text);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-logo:hover {
+      opacity: 0.85;
+    }
+
+    nav {
+      display: flex;
+      gap: var(--space-1);
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: var(--space-1) var(--space-3);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-size: var(--text-sm);
+      border-radius: 4px;
+      transition: color 150ms ease, background-color 150ms ease;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: var(--color-text);
+      background-color: var(--color-surface);
+    }
+
+    #theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      min-width: 44px;
+      background: none;
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      color: var(--color-text-secondary);
+      margin-left: auto;
+      padding: var(--space-2);
+      transition: color 150ms ease, border-color 150ms ease;
+    }
+
+    #theme-toggle:hover {
+      color: var(--color-text);
+      border-color: var(--color-text-secondary);
+    }
+
+    [data-theme="dark"] .icon-sun { display: none; }
+    [data-theme="light"] .icon-moon { display: none; }
+
+    #app > section {
+      padding: var(--space-12) 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--color-border);
+      padding: var(--space-8) 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+    }
+
+    #back-to-top {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      font-size: var(--text-sm);
+      margin-top: var(--space-4);
+    }
+
+    /* --- Contact Page --- */
+    .contact-intro {
+      max-width: 600px;
+      margin-bottom: var(--space-8);
+    }
+
+    .contact-form {
+      max-width: 560px;
+    }
+
+    .form-group {
+      margin-bottom: var(--space-5);
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: var(--space-1);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      display: block;
+      width: 100%;
+      padding: var(--space-2) var(--space-3);
+      background-color: var(--color-surface);
+      color: var(--color-text);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      transition: border-color 150ms ease;
+      min-height: 44px;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--color-accent);
+      outline: none;
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: var(--space-2) var(--space-6);
+      background-color: var(--color-accent);
+      color: var(--color-surface);
+      border: none;
+      border-radius: 4px;
+      font-size: var(--text-base);
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 150ms ease;
+    }
+
+    .btn-submit:hover {
+      opacity: 0.85;
+    }
+
+    .contact-success,
+    .contact-error {
+      display: none;
+      padding: var(--space-4);
+      margin-top: var(--space-5);
+      border-radius: 4px;
+      font-size: var(--text-sm);
+    }
+
+    .contact-success {
+      background-color: oklch(0.9 0.08 140 / 0.15);
+      border: 1px solid oklch(0.6 0.15 140 / 0.3);
+      color: var(--color-text);
+    }
+
+    .contact-error {
+      background-color: oklch(0.9 0.08 30 / 0.15);
+      border: 1px solid oklch(0.6 0.15 30 / 0.3);
+      color: var(--color-text);
+    }
+
+    .contact-success.visible,
+    .contact-error.visible {
+      display: block;
+    }
+
+    .contact-success a,
+    .contact-error a {
+      color: var(--color-accent);
+    }
+
+    /* --- Resources Page --- */
+    .resources-intro {
+      max-width: 600px;
+      margin-bottom: var(--space-8);
+    }
+
+    .resource-category {
+      margin-bottom: var(--space-8);
+    }
+
+    .resource-category h2 {
+      margin-bottom: var(--space-3);
+    }
+
+    .resource-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .resource-list li {
+      margin-bottom: var(--space-3);
+      line-height: 1.5;
+    }
+
+    .resource-link {
+      font-weight: 600;
+    }
+
+    .resource-desc {
+      color: var(--color-text-secondary);
+      font-size: var(--text-sm);
+    }
+
+    .resource-empty {
+      color: var(--color-text-secondary);
+      font-size: var(--text-sm);
+      font-style: italic;
+    }
+
+    /* About page */
+    .bios-grid {
+      display: grid;
+      gap: var(--space-8);
+      margin-bottom: var(--space-12);
+    }
+
+    .bio-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: var(--space-6);
+    }
+
+    .bio-photo {
+      width: 150px;
+      height: 150px;
+      background: var(--color-border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: var(--text-lg);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+    }
+
+    .bio-card h2 {
+      margin-bottom: var(--space-2);
+    }
+
+    .bio-countdown {
+      font-size: var(--text-sm);
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+
+    .about-section {
+      margin-bottom: var(--space-12);
+    }
+
+    .about-section h2 {
+      margin-bottom: var(--space-4);
+    }
+
+    .destination-placeholder {
+      border: 2px dashed var(--color-border);
+      border-radius: 8px;
+      padding: var(--space-10);
+      text-align: center;
+      color: var(--color-text-secondary);
+    }
+
+    .destination-placeholder p {
+      margin-bottom: 0;
+      font-family: var(--font-heading);
+      font-size: var(--text-lg);
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: var(--space-8);
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 11px;
+      top: 4px;
+      bottom: 4px;
+      width: 2px;
+      background: var(--color-border);
+      border-radius: 1px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: var(--space-8);
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-marker {
+      position: absolute;
+      left: calc(-1 * var(--space-8) + 4px);
+      top: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--color-border);
+      border: 2px solid var(--color-bg);
+      z-index: 1;
+    }
+
+    .timeline-item.current .timeline-marker {
+      background: var(--color-accent);
+      box-shadow: 0 0 0 3px var(--color-focus-ring);
+    }
+
+    .timeline-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    .timeline-date {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--color-text);
+      font-family: var(--font-heading);
+    }
+
+    .timeline-label {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+    }
+
+    .timeline-item.current .timeline-date {
+      color: var(--color-accent);
+    }
+
+    .cta-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      min-width: 44px;
+      padding: var(--space-2) var(--space-6);
+      background: var(--color-accent);
+      color: var(--color-bg);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: var(--text-base);
+      transition: opacity 150ms ease;
+    }
+
+    .cta-link:hover {
+      opacity: 0.85;
+      color: var(--color-bg);
+    }
+
+    #view-about h1 {
+      margin-bottom: var(--space-8);
+    }
+
+    @media (min-width: 768px) {
+      .bios-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 767px) {
+      header .container {
+        flex-wrap: wrap;
+        gap: var(--space-3);
+      }
+
+      .site-logo {
+        width: 100%;
+      }
+
+      nav {
+        order: 1;
+        width: 100%;
+      }
+
+      #theme-toggle {
+        order: 0;
+        margin-left: auto;
+      }
+    }
+
+    /* ── Home: Hero ── */
+    .hero {
+      padding: var(--space-4) 0 var(--space-4);
+    }
+
+    .hero h1 {
+      max-width: 720px;
+    }
+
+    .hero p {
+      font-size: var(--text-lg);
+      color: var(--color-text-secondary);
+      max-width: 600px;
+      margin-bottom: var(--space-6);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      min-width: 44px;
+      padding: var(--space-2) var(--space-6);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      font-weight: 600;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity 150ms ease;
+      line-height: 1.2;
+    }
+
+    .btn-primary {
+      background: var(--color-accent);
+      color: var(--color-surface);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--color-accent);
+      border: 1px solid var(--color-accent);
+    }
+
+    .btn-secondary:hover {
+      opacity: 0.85;
+    }
+
+    /* ── Home: Latest Posts ── */
+    .section-gap {
+      margin-top: var(--space-16);
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+
+    @media (min-width: 768px) {
+      .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .post-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .post-card-image {
+      background: var(--color-border);
+      height: 200px;
+    }
+
+    .post-card-body {
+      padding: var(--space-4);
+    }
+
+    .post-card-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-base);
+      font-weight: 700;
+      margin-bottom: var(--space-2);
+      color: var(--color-text);
+    }
+
+    .post-card-date {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-2);
+    }
+
+    .post-card-excerpt {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: 0;
+    }
+
+    /* ── Home: Instagram Feed ── */
+    .instagram-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-2);
+      margin-bottom: var(--space-4);
+    }
+
+    @media (min-width: 768px) {
+      .instagram-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .instagram-placeholder {
+      aspect-ratio: 1;
+      background: var(--color-border);
+      border-radius: 4px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .instagram-placeholder::before {
+      content: '';
+      width: 48px;
+      height: 36px;
+      border: 2px solid var(--color-surface);
+      border-radius: 6px;
+      position: absolute;
+    }
+
+    .instagram-placeholder::after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      border: 2px solid var(--color-surface);
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .instagram-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-size: var(--text-sm);
+    }
+
+    /* ── Home: Newsletter ── */
+    .newsletter-action {
+      margin-top: var(--space-4);
+    }
+
+    /* ── Blog Listing ── */
+    .blog-header {
+      margin-bottom: var(--space-8);
+    }
+
+    .tag-filters {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-6);
+    }
+
+    .tag-filter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: var(--space-1) var(--space-4);
+      background: transparent;
+      color: var(--color-text-secondary);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      font-size: var(--text-sm);
+      cursor: pointer;
+      transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease;
+    }
+
+    .tag-filter:hover,
+    .tag-filter[data-active="true"] {
+      color: var(--color-text);
+      border-color: var(--color-accent);
+      background-color: var(--color-surface);
+    }
+
+    .post-card h3 {
+      font-size: var(--text-lg);
+    }
+
+    .post-card img {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 4px 4px 0 0;
+      width: 100%;
+    }
+
+    .post-card time {
+      display: block;
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-2);
+    }
+
+    .post-card .post-card-body p {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-3);
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      min-width: 44px;
+      font-weight: 600;
+      font-size: var(--text-sm);
+    }
+
+    .posts-pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: var(--space-8);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .pagination-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      min-width: 44px;
+      padding: var(--space-2) var(--space-5);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      transition: border-color 150ms ease, background-color 150ms ease;
+    }
+
+    .pagination-link:hover {
+      border-color: var(--color-accent);
+      background-color: var(--color-surface);
+    }
+
+    .pagination-link[aria-disabled="true"] {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .posts-empty,
+    .posts-error {
+      text-align: center;
+      padding: var(--space-12) var(--space-4);
+      color: var(--color-text-secondary);
+    }
+
+    .posts-empty p,
+    .posts-error p {
+      margin-bottom: var(--space-4);
+    }
+
+    .posts-skeleton {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+
+    @media (min-width: 768px) {
+      .posts-skeleton {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* ── Post Detail ── */
+    .post-back-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      margin-bottom: var(--space-6);
+    }
+
+    .post-full h1 {
+      margin-bottom: var(--space-2);
+    }
+
+    .post-meta {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-6);
+    }
+
+    .post-full > img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: var(--space-6);
+    }
+
+    .post-content {
+      max-width: 720px;
+      line-height: 1.8;
+    }
+
+    .post-content p {
+      margin-bottom: var(--space-5);
+    }
+
+    .post-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-4);
+      margin-top: var(--space-10);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .post-nav-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      max-width: 50%;
+    }
+
+    .post-nav-link.next {
+      text-align: right;
+      margin-left: auto;
+    }
+
+    #post-error p {
+      margin-bottom: var(--space-4);
+    }
+  </style>
 </head>
 <body>
-  <script src="/assets/js/app.js"></script>
+  <header>
+    <div class="container">
+      <a href="#home" class="site-logo">Brent &amp; Denise</a>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+        <a href="#resources">Resources</a>
+      </nav>
+      <div class="header-social">
+        <a href="https://instagram.com/brentanddenise" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="5"></circle><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"></circle></svg>
+          <span class="sr-only">Instagram</span>
+        </a>
+        <a href="https://youtube.com/@brentanddenise" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="10 8 16 12 10 16" fill="currentColor"></polygon></svg>
+          <span class="sr-only">YouTube</span>
+        </a>
+        <a href="https://x.com/brentanddenise" target="_blank" rel="noopener" aria-label="X (Twitter)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+          <span class="sr-only">X (Twitter)</span>
+        </a>
+        <a href="https://tiktok.com/@brentanddenise" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg>
+          <span class="sr-only">TikTok</span>
+        </a>
+      </div>
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="app">
+    <section id="view-home">
+      <!-- Hero -->
+      <div class="container">
+        <div class="hero">
+          <h1>We're Leaving America. Here's Why.</h1>
+          <p>Follow Brent &amp; Denise as we plan our retirement, navigate the move abroad, and build a new life — one that our savings can actually support.</p>
+          <div class="hero-actions">
+            <a href="#about" class="btn-primary">Read Our Story</a>
+            <a href="#blog" class="btn-secondary">Follow Along</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Latest Posts -->
+      <div class="container section-gap">
+        <h2>Latest from the Blog</h2>
+        <div id="latest-posts" class="posts-grid">
+          <article class="post-card">
+            <div class="post-card-image"></div>
+            <div class="post-card-body">
+              <h3 class="post-card-title">Coming Soon</h3>
+              <p class="post-card-date">March 2026</p>
+              <p class="post-card-excerpt">Our first post is on its way. We'll be sharing our story, our plans, and everything we learn along the way.</p>
+            </div>
+          </article>
+          <article class="post-card">
+            <div class="post-card-image"></div>
+            <div class="post-card-body">
+              <h3 class="post-card-title">Our Retirement Strategy</h3>
+              <p class="post-card-date">Coming Soon</p>
+              <p class="post-card-excerpt">How we're planning to make our savings last — from budget breakdowns to country comparisons.</p>
+            </div>
+          </article>
+          <article class="post-card">
+            <div class="post-card-image"></div>
+            <div class="post-card-body">
+              <h3 class="post-card-title">Why We Chose Portugal</h3>
+              <p class="post-card-date">Coming Soon</p>
+              <p class="post-card-excerpt">The factors that led us to consider Portugal as our new home, from cost of living to healthcare to visa options.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div class="container section-gap">
+        <h2>Follow Our Journey</h2>
+        <div id="instagram-feed" class="instagram-grid">
+          <div class="instagram-placeholder"></div>
+          <div class="instagram-placeholder"></div>
+          <div class="instagram-placeholder"></div>
+          <div class="instagram-placeholder"></div>
+        </div>
+        <a href="https://instagram.com/brentanddenise" target="_blank" rel="noopener" class="instagram-link">Follow @brentanddenise on Instagram</a>
+      </div>
+
+      <!-- Newsletter -->
+      <div id="newsletter-form" class="container section-gap">
+        <h2>Join Our Journey</h2>
+        <p>Be the first to know when we publish new posts.</p>
+        <a href="mailto:hello@brentanddenise.com?subject=Subscribe" class="btn-subscribe">Subscribe</a>
+      </div>
+    </section>
+    <section id="view-about" hidden>
+      <div class="container">
+
+        <h1>Our Story</h1>
+
+        <div class="bios-grid">
+          <div class="bio-card">
+            <div class="bio-photo" aria-label="Brent">Brent</div>
+            <h2>Brent</h2>
+            <p>I've got about 5 years left before I can retire. We're planning every step of the way to make sure we can leave the US and live comfortably abroad.</p>
+            <p class="bio-countdown">5 years to retirement</p>
+          </div>
+          <div class="bio-card">
+            <div class="bio-photo" aria-label="Denise">Denise</div>
+            <h2>Denise</h2>
+            <p>I'm retiring in December 2027 and counting down the days. This is our story of dreaming big and making it happen.</p>
+            <p class="bio-countdown">Retiring December 2027</p>
+          </div>
+        </div>
+
+        <div class="about-section">
+          <h2>Why We're Leaving America</h2>
+          <p>This isn't a decision we made lightly. We've spent years talking through what our future looks like, and the more we planned, the clearer it became that the life we want is somewhere else. It's not about running away — it's about running toward something better.</p>
+          <p>The rising cost of living has made it harder to save at the pace we need. Even with solid jobs and careful budgeting, housing, groceries, insurance, and utilities keep eating up more of our income. We've watched our retirement projections shift year after year, and the math just doesn't add up the way it used to.</p>
+          <p>Healthcare is the biggest unknown. We've seen too many retirement plans derailed by medical costs, and the older we get, the more that uncertainty weighs on us. Countries with universal healthcare systems offer a stability we can't find here — and that peace of mind is worth more than we can put into words.</p>
+          <p>But beyond the numbers, we want a simpler life. Less stress, more time outside, deeper connections with each other and the communities we join. We want to wake up excited about the day ahead, not worried about the next bill. That's the future we're building, one step at a time.</p>
+        </div>
+
+        <div class="about-section">
+          <h2>Where We're Going</h2>
+          <p>We're still researching our destination! We'll share our process, the countries we're considering, and how we make the final decision. Check back often for updates.</p>
+          <div class="destination-placeholder">
+            <p>Destination — TBD</p>
+          </div>
+        </div>
+
+        <div class="about-section">
+          <h2>Our Timeline</h2>
+          <div class="timeline">
+            <div class="timeline-item current">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">Today</span>
+                <span class="timeline-label">Planning Phase</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">December 2027</span>
+                <span class="timeline-label">Denise Retires</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2028</span>
+                <span class="timeline-label">Brent's Final Years at Work</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2031</span>
+                <span class="timeline-label">Brent Retires</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">Moving Day</span>
+                <span class="timeline-label">TBD</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-marker" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">Settled</span>
+                <span class="timeline-label">Abroad</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#blog" class="cta-link">Follow Our Journey</a>
+
+      </div>
+    </section>
+    <section id="view-blog" hidden>
+      <div class="container">
+        <div class="blog-header">
+          <h1>Latest Posts</h1>
+        </div>
+
+        <div class="tag-filters" id="tag-filters">
+          <button class="tag-filter" data-tag="all" data-active="true">All</button>
+        </div>
+
+        <div id="posts-skeleton" class="posts-skeleton">
+          <div class="post-card">
+            <div class="skeleton" style="aspect-ratio:16/9; border-radius:4px 4px 0 0"></div>
+            <div class="post-card-body">
+              <div class="skeleton" style="height:24px; width:70%; margin-bottom:12px"></div>
+              <div class="skeleton" style="height:16px; width:40%; margin-bottom:12px"></div>
+              <div class="skeleton" style="height:40px; width:100%; margin-bottom:8px"></div>
+              <div class="skeleton" style="height:44px; width:100px"></div>
+            </div>
+          </div>
+          <div class="post-card">
+            <div class="skeleton" style="aspect-ratio:16/9; border-radius:4px 4px 0 0"></div>
+            <div class="post-card-body">
+              <div class="skeleton" style="height:24px; width:60%; margin-bottom:12px"></div>
+              <div class="skeleton" style="height:16px; width:35%; margin-bottom:12px"></div>
+              <div class="skeleton" style="height:40px; width:100%; margin-bottom:8px"></div>
+              <div class="skeleton" style="height:44px; width:100px"></div>
+            </div>
+          </div>
+          <div class="post-card">
+            <div class="skeleton" style="aspect-ratio:16/9; border-radius:4px 4px 0 0"></div>
+            <div class="post-card-body">
+              <div class="skeleton" style="height:24px; width:75%; margin-bottom:12px"></div>
+              <div class="skeleton" style="height:16px; width:45%; margin-bottom:12px"></div>
+              <div class="skeleton" style="height:40px; width:100%; margin-bottom:8px"></div>
+              <div class="skeleton" style="height:44px; width:100px"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="posts-container" class="posts-grid"></div>
+
+        <div id="posts-empty" class="posts-empty" hidden>
+          <p>No posts yet — check back soon! In the meantime, follow us on Instagram.</p>
+          <a href="https://instagram.com/brentanddenise" target="_blank" rel="noopener noreferrer" class="read-more">Follow @brentanddenise</a>
+        </div>
+
+        <div id="posts-error" class="posts-error" hidden>
+          <p>Couldn't load posts. Please try again later.</p>
+          <a href="#blog" class="read-more" id="retry-posts">Retry</a>
+        </div>
+
+        <div id="posts-pagination" class="posts-pagination" hidden>
+          <a href="#" id="newer-posts" class="pagination-link" aria-disabled="true">Newer Posts</a>
+          <a href="#" id="older-posts" class="pagination-link">Older Posts</a>
+        </div>
+      </div>
+    </section>
+    <section id="view-contact" hidden>
+      <div class="container">
+        <h1>Get in Touch</h1>
+        <p class="contact-intro">We'd love to hear from you — whether you're planning your own retirement abroad, have questions about our journey, or just want to say hi.</p>
+
+        <form class="contact-form" action="mailto:hello@brentanddenise.com" method="post" enctype="text/plain" id="contact-form">
+          <div class="form-group">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="name" required minlength="2" autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="email" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="contact-subject">Subject</label>
+            <input type="text" id="contact-subject" name="subject">
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" required minlength="10"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+
+        <div class="contact-success" id="contact-success">
+          Thanks! We'll get back to you.
+        </div>
+
+        <div class="contact-error" id="contact-error">
+          Couldn't open your mail app. Please email us directly at <a href="mailto:hello@brentanddenise.com">hello@brentanddenise.com</a>.
+        </div>
+      </div>
+    </section>
+    <section id="view-resources" hidden>
+      <div class="container">
+        <h1>Resources for Your Own Journey</h1>
+        <p class="resources-intro">Here are the tools, websites, and services we've found helpful in planning our retirement and move abroad.</p>
+
+        <div class="resource-category">
+          <h2>Retirement Planning</h2>
+          <ul class="resource-list">
+            <li>
+              <a class="resource-link" href="https://www.ssa.gov/" target="_blank" rel="noopener">Social Security Administration</a>
+              <span class="resource-desc"> — benefits calculator and official info</span>
+            </li>
+            <li>
+              <a class="resource-link" href="https://www.aarp.org/retirement/" target="_blank" rel="noopener">AARP Retirement Planning</a>
+              <span class="resource-desc"> — guides, tools, and articles for retirement</span>
+            </li>
+            <li>
+              <a class="resource-link" href="https://www.firecalc.com/" target="_blank" rel="noopener">FIRE Calculator</a>
+              <span class="resource-desc"> — retirement withdrawal simulator</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="resource-category">
+          <h2>Moving Abroad</h2>
+          <ul class="resource-list">
+            <li>
+              <a class="resource-link" href="https://www.expatexchange.com/" target="_blank" rel="noopener">Expat Exchange</a>
+              <span class="resource-desc"> — expat community and relocation resources</span>
+            </li>
+            <li>
+              <a class="resource-link" href="https://www.internations.org/" target="_blank" rel="noopener">Internations</a>
+              <span class="resource-desc"> — global expat network and guides</span>
+            </li>
+            <li>
+              <a class="resource-link" href="https://travel.state.gov/content/travel/en/international-travel/while-abroad/visas.html" target="_blank" rel="noopener">Visa Information by Country</a>
+              <span class="resource-desc"> — U.S. State Department travel visa guidance</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="resource-category">
+          <h2>Cost of Living</h2>
+          <ul class="resource-list">
+            <li>
+              <a class="resource-link" href="https://www.numbeo.com/cost-of-living/" target="_blank" rel="noopener">Numbeo</a>
+              <span class="resource-desc"> — crowd-sourced cost of living data worldwide</span>
+            </li>
+            <li>
+              <a class="resource-link" href="https://www.expatistan.com/cost-of-living" target="_blank" rel="noopener">Expatistan</a>
+              <span class="resource-desc"> — compare cost of living between cities</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="resource-category">
+          <h2>Healthcare</h2>
+          <ul class="resource-list">
+            <li>
+              <a class="resource-link" href="https://www.cignaglobal.com/international-health-insurance" target="_blank" rel="noopener">Cigna Global</a>
+              <span class="resource-desc"> — international health insurance plans</span>
+            </li>
+            <li>
+              <a class="resource-link" href="https://wwwnc.cdc.gov/travel/" target="_blank" rel="noopener">CDC Travel Health Info</a>
+              <span class="resource-desc"> — destinations, vaccines, and health advisories</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="view-post" hidden>
+      <div class="container">
+        <a href="#blog" class="post-back-link">← Back to Blog</a>
+
+        <div id="post-skeleton">
+          <div class="skeleton" style="aspect-ratio:16/9; border-radius:8px; margin-bottom:24px"></div>
+          <div class="skeleton" style="height:40px; width:80%; margin-bottom:16px"></div>
+          <div class="skeleton" style="height:20px; width:50%; margin-bottom:24px"></div>
+          <div class="skeleton" style="height:200px; width:100%; margin-bottom:12px"></div>
+          <div class="skeleton" style="height:200px; width:100%; margin-bottom:12px"></div>
+        </div>
+
+        <div id="post-container"></div>
+
+        <div id="post-error" class="posts-error" hidden>
+          <p>Post not found.</p>
+          <a href="#blog" class="read-more">← Back to Blog</a>
+        </div>
+
+        <div id="post-nav" class="post-nav" hidden>
+          <a href="#" id="prev-post" class="post-nav-link">← Previous Post</a>
+          <a href="#" id="next-post" class="post-nav-link next">Next Post →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-newsletter">
+        <h3>Join Our Journey</h3>
+        <p>Be the first to know when we publish new posts.</p>
+        <a href="mailto:hello@brentanddenise.com?subject=Subscribe" class="btn-subscribe">Subscribe</a>
+      </div>
+      <div id="social-links">
+        <a href="https://instagram.com/brentanddenise" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="5"></circle><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"></circle></svg>
+          <span class="sr-only">Instagram</span>
+        </a>
+        <a href="https://youtube.com/@brentanddenise" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="10 8 16 12 10 16" fill="currentColor"></polygon></svg>
+          <span class="sr-only">YouTube</span>
+        </a>
+        <a href="https://x.com/brentanddenise" target="_blank" rel="noopener" aria-label="X (Twitter)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+          <span class="sr-only">X (Twitter)</span>
+        </a>
+        <a href="https://tiktok.com/@brentanddenise" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg>
+          <span class="sr-only">TikTok</span>
+        </a>
+      </div>
+      <p>&copy; 2026 Brent &amp; Denise. All rights reserved.</p>
+      <a href="#" id="back-to-top" class="read-more">Back to top</a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        if (!form.checkValidity()) return;
+
+        e.preventDefault();
+
+        var name = encodeURIComponent(document.getElementById('contact-name').value);
+        var email = encodeURIComponent(document.getElementById('contact-email').value);
+        var subject = encodeURIComponent(document.getElementById('contact-subject').value || 'Contact from Brent & Denise');
+        var message = encodeURIComponent(document.getElementById('contact-message').value);
+
+        var mailtoLink = 'mailto:hello@brentanddenise.com?subject=' + subject + '&body=' + encodeURIComponent('From: ') + name + encodeURIComponent('\nEmail: ') + email + encodeURIComponent('\n\n') + message;
+
+        document.getElementById('contact-success').classList.add('visible');
+
+        var mailtoWindow = window.open(mailtoLink);
+        if (!mailtoWindow || mailtoWindow.closed) {
+          document.getElementById('contact-error').classList.add('visible');
+        }
+      });
+    });
+  </script>
+  <script src="/assets/js/posts.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 </body>
 </html>

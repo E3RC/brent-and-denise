@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Brent &amp; Denise — Retiring Abroad</title>
+  <link href="https://brentanddenise.com/"/>
+  <updated>2026-08-20T00:00:00Z</updated>
+  <id>https://brentanddenise.com/</id>
+  <author>
+    <name>Brent &amp; Denise</name>
+  </author>
+
+  <entry>
+    <title>How Much Does It Really Cost to Live Abroad?</title>
+    <link href="https://brentanddenise.com/#post-cost-of-living-comparison"/>
+    <id>https://brentanddenise.com/#post-cost-of-living-comparison</id>
+    <updated>2026-08-20T00:00:00Z</updated>
+    <summary>We ran the numbers on everything — rent, groceries, utilities, healthcare, dining out — and the difference between the US and our top destination countries is staggering.</summary>
+    <author>
+      <name>Brent &amp; Denise</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Top 5 Countries We're Considering for Retirement</title>
+    <link href="https://brentanddenise.com/#post-top-5-countries-retirement"/>
+    <id>https://brentanddenise.com/#post-top-5-countries-retirement</id>
+    <updated>2026-08-10T00:00:00Z</updated>
+    <summary>We've narrowed the list to five countries that check our boxes: affordable healthcare, reasonable cost of living, safety, and a welcoming visa path for retirees.</summary>
+    <author>
+      <name>Brent &amp; Denise</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Our Retirement Timeline — The Countdown Begins</title>
+    <link href="https://brentanddenise.com/#post-our-retirement-timeline"/>
+    <id>https://brentanddenise.com/#post-our-retirement-timeline</id>
+    <updated>2026-07-30T00:00:00Z</updated>
+    <summary>Denise has a date locked in. Brent is five years behind. Here's our plan for making two retirements work on one timeline.</summary>
+    <author>
+      <name>Brent &amp; Denise</name>
+    </author>
+  </entry>
+
+  <entry>
+    <title>Why We're Leaving America</title>
+    <link href="https://brentanddenise.com/#post-why-we-are-leaving-america"/>
+    <id>https://brentanddenise.com/#post-why-we-are-leaving-america</id>
+    <updated>2026-07-26T00:00:00Z</updated>
+    <summary>After years of watching our savings buy less and less, we made the decision that changes everything. Here's why we're leaving the country we've called home our entire lives.</summary>
+    <author>
+      <name>Brent &amp; Denise</name>
+    </author>
+  </entry>
+</feed>
