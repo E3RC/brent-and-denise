@@ -352,7 +352,7 @@ Wave 5 (Deployment): TODO-11 (repo must exist) → TODO-12 (everything must be c
 
 ### Wave 5: Deployment
 
-#### TODO-11: Deploy to Cloudflare Pages and configure domain
+#### TODO-11: ✅ Deploy to Cloudflare Pages and configure domain
 - **References**: Cloudflare Pages, custom domain setup
 - **File**: N/A (infrastructure setup)
 - **Actions**:
@@ -390,7 +390,7 @@ Wave 5 (Deployment): TODO-11 (repo must exist) → TODO-12 (everything must be c
 - **QA failure**: Deployment fails → check build settings (output directory should be `/`); DNS not resolving → verify CNAME record; SSL not working → wait for Cloudflare auto-provisioning (up to 24h)
 - **Commit**: `feat: deploy to Cloudflare Pages and configure custom domain`
 
-#### TODO-12: Final integration, visual QA, and documentation
+#### TODO-12: ✅ Final integration, visual QA, and documentation
 - **References**: Full workflow verification phase
 - **File**: All project files
 - **Actions**:
