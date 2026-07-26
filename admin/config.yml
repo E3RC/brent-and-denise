@@ -1,0 +1,68 @@
+backend:
+  name: github
+  repo: E3RC/brent-and-denise
+  branch: master
+
+media_folder: "assets/img/blog"
+public_folder: "/assets/img/blog"
+publish_mode: editorial_workflow
+
+collections:
+  - name: "site_settings"
+    label: "Site Settings"
+    files:
+      - name: "contact"
+        label: "Contact and Social Links"
+        file: "assets/data/site.json"
+        format: "json"
+        fields:
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Primary Channel", name: "primaryChannel", widget: "select", options: ["email", "whatsapp"], default: "email" }
+              - { label: "Email Address", name: "email", widget: "string" }
+              - { label: "Subscribe Email Subject", name: "subscribeSubject", widget: "string", default: "Subscribe" }
+              - { label: "Contact Email Subject", name: "contactSubject", widget: "string", default: "Contact from Brent & Denise" }
+              - { label: "Show WhatsApp Button", name: "whatsappEnabled", widget: "boolean", default: false, required: false }
+              - { label: "WhatsApp Number", name: "whatsappNumber", widget: "string", required: false, hint: "Use country code and numbers only, like 15741234567." }
+              - { label: "WhatsApp Button Label", name: "whatsappLabel", widget: "string", default: "Message us on WhatsApp", required: false }
+          - label: "Social Links"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+              - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
+              - { label: "X URL", name: "x", widget: "string", required: false }
+              - { label: "TikTok URL", name: "tiktok", widget: "string", required: false }
+
+  - name: "blog"
+    label: "Blog"
+    files:
+      - name: "posts"
+        label: "Blog Posts"
+        file: "assets/data/posts.json"
+        format: "json"
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Slug", name: "slug", widget: "string", hint: "Lowercase words separated by hyphens. Used in the URL." }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Author", name: "author", widget: "string", default: "Brent & Denise" }
+              - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "Featured Image", name: "image", widget: "image", required: false }
+              - { label: "Image Alt Text", name: "alt", widget: "string", required: false }
+              - { label: "Excerpt", name: "excerpt", widget: "text" }
+              - { label: "Content", name: "content", widget: "markdown" }
+              - { label: "Tags", name: "tags", widget: "list", required: false, field: { label: "Tag", name: "tag", widget: "string" } }
+              - label: "Social Post Links"
+                name: "social"
+                widget: "object"
+                required: false
+                fields:
+                  - { label: "Instagram", name: "instagram", widget: "string", required: false }
+                  - { label: "YouTube", name: "youtube", widget: "string", required: false }
