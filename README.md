@@ -67,10 +67,12 @@ The admin editor uses Decap CMS and writes changes back to GitHub. Cloudflare Pa
 Before `/admin/` can be used in production, configure a GitHub OAuth provider for Decap CMS on Cloudflare Pages.
 
 1. Create a GitHub OAuth app for `https://brentanddenise.com/admin/`
-2. Deploy a Decap-compatible OAuth bridge, usually as a small Cloudflare Worker
-3. Add the OAuth bridge URL to `admin/config.yml` using `base_url` and `auth_endpoint`
+2. Deploy a Decap-compatible OAuth bridge as a small Cloudflare Worker
+3. Point `cms-auth.brentanddenise.com` at that Worker
 4. Make sure both editors have GitHub access to `E3RC/brent-and-denise`
 5. Visit `https://brentanddenise.com/admin/` and sign in with GitHub
+
+The admin config is intentionally pointed at `https://cms-auth.brentanddenise.com/auth`. If that Worker is not deployed yet, login will fail there. It should not use Netlify's `api.netlify.com/auth` service because this site is hosted on Cloudflare Pages.
 
 Until that OAuth bridge exists, content can still be edited manually in GitHub.
 
