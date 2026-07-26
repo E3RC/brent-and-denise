@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json",
+  "name": "brent-and-denise-cms-auth",
+  "main": "src/index.js",
+  "compatibility_date": "2026-07-26",
+  "workers_dev": true,
+  "routes": [
+    {
+      "pattern": "cms-auth.brentanddenise.com",
+      "custom_domain": true
+    }
+  ],
+  "vars": {
+    "CMS_ORIGIN": "https://brentanddenise.com",
+    "GITHUB_REPO_PRIVATE": "1"
+  }
+}
