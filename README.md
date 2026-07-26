@@ -67,12 +67,26 @@ The admin editor uses Decap CMS and writes changes back to GitHub. Cloudflare Pa
 Before `/admin/` can be used in production, configure a GitHub OAuth provider for Decap CMS on Cloudflare Pages.
 
 1. Create a GitHub OAuth app for `https://brentanddenise.com/admin/`
-2. Deploy a Decap-compatible OAuth bridge as a small Cloudflare Worker
+2. Deploy the included Decap-compatible OAuth bridge in `cloudflare/cms-auth-worker/`
 3. Point `cms-auth.brentanddenise.com` at that Worker
 4. Make sure both editors have GitHub access to `E3RC/brent-and-denise`
 5. Visit `https://brentanddenise.com/admin/` and sign in with GitHub
 
 The admin config is intentionally pointed at `https://cms-auth.brentanddenise.com/auth`. If that Worker is not deployed yet, login will fail there. It should not use Netlify's `api.netlify.com/auth` service because this site is hosted on Cloudflare Pages.
+
+The Worker code and exact deployment notes live in `cloudflare/cms-auth-worker/README.md`. The GitHub OAuth app should use:
+
+- **Homepage URL:** `https://cms-auth.brentanddenise.com`
+- **Authorization callback URL:** `https://cms-auth.brentanddenise.com/callback`
+
+Then deploy the Worker:
+
+```bash
+cd cloudflare/cms-auth-worker
+npx wrangler secret put GITHUB_OAUTH_ID
+npx wrangler secret put GITHUB_OAUTH_SECRET
+npx wrangler deploy
+```
 
 Until that OAuth bridge exists, content can still be edited manually in GitHub.
 
@@ -122,7 +136,7 @@ The site auto-deploys from GitHub to Cloudflare Pages on every push to `master`.
 - **Social media previews**: Hash routing means shared post links show the homepage OG tags, not post-specific previews. Mitigation paths: Cloudflare Worker with HTMLRewriter, static per-post HTML files with redirects, or a prerendering service.
 - **Dark mode persistence**: Preference is not saved between sessions (no localStorage). Defaults to system `prefers-color-scheme`.
 - **Contact form**: Uses `mailto:` which requires a configured mail app. Cloudflare Pages Function can be added later for server-side handling.
-- **CMS login**: `/admin/` is present, but production editing still needs a Decap-compatible GitHub OAuth bridge configured for Cloudflare Pages.
+- **CMS login**: `/admin/` is present, and the Cloudflare Worker OAuth bridge code lives in `cloudflare/cms-auth-worker/`. Production editing still needs a GitHub OAuth app plus Worker secrets/deploy.
 
 ## License
 
