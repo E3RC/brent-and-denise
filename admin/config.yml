@@ -3,7 +3,7 @@ backend:
   repo: E3RC/brent-and-denise
   branch: master
   base_url: https://cms-auth.brentanddenise.com
-  auth_endpoint: auth
+  auth_endpoint: /auth
 
 media_folder: "assets/img/blog"
 public_folder: "/assets/img/blog"
