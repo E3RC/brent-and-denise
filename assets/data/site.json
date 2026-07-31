@@ -1,0 +1,17 @@
+{
+  "contact": {
+    "primaryChannel": "email",
+    "email": "hello@brentanddenise.com",
+    "subscribeSubject": "Subscribe",
+    "contactSubject": "Contact from Brent & Denise",
+    "whatsappEnabled": false,
+    "whatsappNumber": "",
+    "whatsappLabel": "Message us on WhatsApp"
+  },
+  "social": {
+    "instagram": "https://instagram.com/brentanddenise",
+    "youtube": "https://youtube.com/@brentanddenise",
+    "x": "https://x.com/brentanddenise",
+    "tiktok": "https://tiktok.com/@brentanddenise"
+  }
+}

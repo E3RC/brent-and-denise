@@ -42,6 +42,36 @@ window.BlogPosts = (function () {
     return posts.filter(function (p) { return p.tags.indexOf(tag) !== -1; });
   }
 
+  function escapeHtml(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function inlineMarkdown(value) {
+    return escapeHtml(value)
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  }
+
+  function formatContent(content) {
+    if (!content) return '';
+    if (String(content).trim().charAt(0) === '<') return content;
+
+    return String(content).split(/\n{2,}/).map(function (block) {
+      var trimmed = block.trim();
+      if (!trimmed) return '';
+      if (trimmed.indexOf('### ') === 0) return '<h3>' + inlineMarkdown(trimmed.slice(4)) + '</h3>';
+      if (trimmed.indexOf('## ') === 0) return '<h2>' + inlineMarkdown(trimmed.slice(3)) + '</h2>';
+      if (trimmed.indexOf('# ') === 0) return '<h1>' + inlineMarkdown(trimmed.slice(2)) + '</h1>';
+      return '<p>' + inlineMarkdown(trimmed).replace(/\n/g, '<br>') + '</p>';
+    }).join('');
+  }
+
   function renderPostCard(post) {
     return '<article class="post-card">' +
       '<img src="' + post.image + '" alt="' + post.alt + '" width="600" height="338" loading="lazy">' +
@@ -61,7 +91,7 @@ window.BlogPosts = (function () {
       '<span>' + post.author + '</span> \u00B7 ' +
       '<time datetime="' + post.date + '">' + post.date + '</time>' +
       '</div>' +
-      '<div class="post-content">' + post.content + '</div>' +
+      '<div class="post-content">' + formatContent(post.content) + '</div>' +
       '</article>';
   }
 
