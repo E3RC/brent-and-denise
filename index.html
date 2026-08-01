@@ -20,8 +20,7 @@
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   <script>
     (function () {
-      var saved = (document.cookie.match(/(^| )theme=([^;]+)/) || [])[2];
-      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
@@ -734,10 +733,6 @@
       .posts-skeleton {
         grid-template-columns: repeat(2, 1fr);
       }
-    }
-
-    .posts-skeleton[hidden] {
-      display: none;
     }
 
     /* ── Post Detail ── */
