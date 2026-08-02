@@ -33,31 +33,13 @@
   </style>
   <!--
     Netlify Identity widget: required for Decap's git-gateway backend.
-    Loads a global `netlifyIdentity` object so the CMS can sign authors in.
+    Loaded synchronously from <head> so that window.netlifyIdentity is
+    registered before any body-script runs. The init() call itself lives
+    in <body> just below — running it in <head> risks the widget referencing
+    DOM nodes that don't exist yet, after which Decap reinitialises with
+    a wrong relative URL.
   -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <!--
-    Configure the widget to point at THIS site's Identity service. The CMS
-    lives on brentanddenise.com (Cloudflare) but Identity runs at
-    brentndenisecom.netlify.app (Netlify). Without this call the widget
-    guesses the APIUrl from window.location and tries to call a non-existent
-    Cloudflare endpoint. Latest APIUrl: update this if you rename the Netlify
-    site (Site settings → Site details → Change site name).
-  -->
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.init({
-        // MUST end in /.netlify/identity — the widget appends auth-related
-        // subpaths (e.g. /site, /user, /token) to this URL. Without the
-        // trailing /.netlify/identity, the widget's `…/site`, `…/user`, and
-        // `…/token` calls all 404 against the Netlify site root. To rename
-        // the underlying Netlify site, update the host (Site settings →
-        // Site details → Change site name) and keep the path segment intact.
-        APIUrl: 'https://brentndenisecom.netlify.app/.netlify/identity',
-        logo: false
-      });
-    }
-  </script>
 </head>
 <body>
   <noscript>
@@ -66,6 +48,20 @@
       <p>This page needs JavaScript enabled to run the content editor.</p>
     </div>
   </noscript>
+  <!--
+    Initialise the Netlify Identity widget AFTER <body> exists. Without
+    this call the widget guesses APIUrl from window.location and Decap
+    reinitialises it with the wrong host. Required path segment: end in
+    /.netlify/identity — the widget appends /site, /user, /token to this
+    base URL. To rename the underlying Netlify site, change the host (Site
+    settings → Site details → Change site name) and keep the path intact.
+  -->
+  <script>
+    window.netlifyIdentity.init({
+      APIUrl: 'https://brentndenisecom.netlify.app/.netlify/identity',
+      logo: false
+    });
+  </script>
   <!--
     Decap CMS script. Loads /admin/config.yml on this same path and renders
     the editor UI. If unauthenticated it opens the git-gateway login flow.
