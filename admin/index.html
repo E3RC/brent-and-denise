@@ -48,11 +48,11 @@
     if (window.netlifyIdentity) {
       window.netlifyIdentity.init({
         // MUST end in /.netlify/identity — the widget appends auth-related
-        // paths (e.g. /site, /user, /token) directly to this URL. If the
-        // trailing /.netlify/identity is missing, calls hit the site root
-        // and 404. To rename the underlying Netlify site, update the host
-        // (Site settings → Site details → Change site name) and keep the
-        // path segment intact.
+        // subpaths (e.g. /site, /user, /token) to this URL. Without the
+        // trailing /.netlify/identity, the widget's `…/site`, `…/user`, and
+        // `…/token` calls all 404 against the Netlify site root. To rename
+        // the underlying Netlify site, update the host (Site settings →
+        // Site details → Change site name) and keep the path segment intact.
         APIUrl: 'https://brentndenisecom.netlify.app/.netlify/identity',
         logo: false
       });
