@@ -798,6 +798,31 @@
     #post-error p {
       margin-bottom: var(--space-4);
     }
+
+    /* Admin link in footer — keep it discreet but findable for authors */
+    .admin-link {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      opacity: 0.6;
+      font-size: var(--text-sm);
+      margin-left: var(--space-2);
+      transition: opacity 150ms ease;
+    }
+
+    .admin-link:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    /* Fallback content shown in post body if marked.js fails to load */
+    .post-fallback {
+      padding: var(--space-4);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      font-size: var(--text-sm);
+      white-space: pre-wrap;
+    }
   </style>
 </head>
 <body>
@@ -1224,7 +1249,7 @@
           <span class="sr-only">TikTok</span>
         </a>
       </div>
-      <p>&copy; 2026 Brent &amp; Denise. All rights reserved.</p>
+      <p>&copy; 2026 Brent &amp; Denise. All rights reserved.<a href="/admin/" rel="nofollow" class="admin-link">Editor</a></p>
       <a href="#" id="back-to-top" class="read-more">Back to top</a>
     </div>
   </footer>
@@ -1255,6 +1280,9 @@
       });
     });
   </script>
+  <!-- Markdown renderer + sanitizer for post bodies (SRI-pinned) -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@13.0.3/marked.min.js" integrity="sha384-YTBHtsL8yVTHcLakYNyrOfK3K+QQcXiECuaALJ+3j7Mo681Rtzadt8NR6WrZH+eQ" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js" integrity="sha384-XQqX/4yiUGu+oyr87jvWzRuqBUK/adrY0DunhL+tID9m/9dwSpV8h9Fk/Sg6ifVQ" crossorigin="anonymous" defer></script>
   <script src="/assets/js/posts.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 </body>

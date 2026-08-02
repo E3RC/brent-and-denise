@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Editor — Brent &amp; Denise</title>
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Authoring UI for Brent &amp; Denise. Sign-in required. Not indexed by search engines.">
+  <link rel="icon" href="/favicon.ico" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text);
+      margin: 0;
+    }
+    .admin-shell {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: var(--space-12) var(--space-4);
+      text-align: center;
+    }
+    .admin-shell h1 {
+      font-family: var(--font-heading);
+      margin-bottom: var(--space-2);
+    }
+    .admin-shell p {
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+    }
+    [data-theme="dark"] { background-color: var(--color-bg, #0f1015); }
+  </style>
+  <!--
+    Netlify Identity widget: required for Decap's git-gateway backend.
+    Loads a global `netlifyIdentity` object so the CMS can sign authors in.
+  -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <!--
+    Configure the widget to point at THIS site's Identity service. The CMS
+    lives on brentanddenise.com (Cloudflare) but Identity runs at
+    brentndenisecom.netlify.app (Netlify). Without this call the widget
+    guesses the APIUrl from window.location and tries to call a non-existent
+    Cloudflare endpoint. Latest APIUrl: update this if you rename the Netlify
+    site (Site settings → Site details → Change site name).
+  -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.init({
+        // MUST match the live Netlify site name. If you rename the site in
+        // Netlify (Site settings → Site details → Change site name), update
+        // this string in the same commit or sign-ins silently break.
+        APIUrl: 'https://brentndenisecom.netlify.app',
+        logo: false
+      });
+    }
+  </script>
+</head>
+<body>
+  <noscript>
+    <div class="admin-shell">
+      <h1>Editor unavailable</h1>
+      <p>This page needs JavaScript enabled to run the content editor.</p>
+    </div>
+  </noscript>
+  <!--
+    Decap CMS script. Loads /admin/config.yml on this same path and renders
+    the editor UI. If unauthenticated it opens the git-gateway login flow.
+  -->
+  <script src="https://unpkg.com/decap-cms@^3.4.0/dist/decap-cms.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+# Decap CMS configuration for Brent & Denise
+# Docs: https://decapcms.org/docs/configuration-options/
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Enables local dev mode: run `npx decap-server` from the project root and
+# open http://localhost:8080/admin/. Production load is unaffected.
+local_backend: true
+
+publish_mode: editorial_workflow
+
+# Where uploaded images land (relative to repo root) and how they're referenced
+# in post frontmatter. Using a relative `public_folder` matches the existing
+# convention in posts.json (`assets/img/blog/...`).
+media_folder: "assets/img/blog"
+public_folder: "assets/img/blog"
+
+site_url: https://brentanddenise.com
+display_url: https://brentanddenise.com
+logo_url: /assets/img/og-image.svg
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    description: "Story posts published to the site feed."
+    files:
+      - name: "posts-data"
+        label: "Posts"
+        file: "assets/data/posts.json"
+        format: "json"
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            summary: "{{title}} — {{date}}"
+            fields:
+              - label: "ID"
+                name: "id"
+                widget: "string"
+                hint: "Stable ID like 'post-5'. Must be unique."
+              - label: "Slug"
+                name: "slug"
+                widget: "string"
+                hint: "URL-safe, lowercase, hyphenated (e.g. 'first-week-in-portugal')."
+              - label: "Title"
+                name: "title"
+                widget: "string"
+              - label: "Author"
+                name: "author"
+                widget: "string"
+                default: "Brent & Denise"
+              - label: "Publish Date"
+                name: "date"
+                widget: "datetime"
+                date_format: "YYYY-MM-DD"
+                time_format: false
+                picker_utc: false
+              - label: "Hero Image"
+                name: "image"
+                widget: "image"
+                allow_types: ["image/png", "image/jpeg", "image/webp", "image/svg+xml"]
+                hint: "1200×630px recommended; WebP <200KB ideal."
+              - label: "Hero Image Alt Text"
+                name: "alt"
+                widget: "string"
+                hint: "Describe the image for screen readers and SEO."
+              - label: "Excerpt"
+                name: "excerpt"
+                widget: "text"
+                hint: "50–220 characters. Appears on cards and the blog list."
+              - label: "Body"
+                name: "content"
+                widget: "markdown"
+                hint: "Markdown supported. ![alt](path) for images; blank line for new paragraphs."
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                hint: "Press Enter after each tag. Used for filtering on the blog page."
+              - label: "Social Links"
+                name: "social"
+                widget: "object"
+                collapsed: true
+                fields:
+                  - label: "Instagram URL"
+                    name: "instagram"
+                    widget: "string"
+                    required: false
+                    hint: "Specific post permalink (optional)."
+                  - label: "YouTube URL"
+                    name: "youtube"
+                    widget: "string"
+                    required: false
+                    hint: "Specific post permalink (optional)."
