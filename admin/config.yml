@@ -4,6 +4,13 @@
 backend:
   name: git-gateway
   branch: main
+  # Decap's git-gateway backend guesses the Identity service URL from
+  # window.location by default — which on brentanddenise.com points at a
+  # 404. Override to the actual Netlify Identity URL so settings requests
+  # land on the real service. The gateway_url is the GitHub-proxy endpoint
+  # Netlify exposes for commits.
+  identity_url: https://brentndenisecom.netlify.app/.netlify/identity
+  gateway_url: https://brentndenisecom.netlify.app/.netlify/git
 
 # Enables local dev mode: run `npx decap-server` from the project root and
 # open http://localhost:8080/admin/. Production load is unaffected.
