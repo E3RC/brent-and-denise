@@ -47,10 +47,13 @@
   <script>
     if (window.netlifyIdentity) {
       window.netlifyIdentity.init({
-        // MUST match the live Netlify site name. If you rename the site in
-        // Netlify (Site settings → Site details → Change site name), update
-        // this string in the same commit or sign-ins silently break.
-        APIUrl: 'https://brentndenisecom.netlify.app',
+        // MUST end in /.netlify/identity — the widget appends auth-related
+        // paths (e.g. /site, /user, /token) directly to this URL. If the
+        // trailing /.netlify/identity is missing, calls hit the site root
+        // and 404. To rename the underlying Netlify site, update the host
+        // (Site settings → Site details → Change site name) and keep the
+        // path segment intact.
+        APIUrl: 'https://brentndenisecom.netlify.app/.netlify/identity',
         logo: false
       });
     }
