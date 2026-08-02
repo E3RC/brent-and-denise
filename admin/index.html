@@ -31,14 +31,6 @@
     }
     [data-theme="dark"] { background-color: var(--color-bg, #0f1015); }
   </style>
-  <!--
-    Netlify Identity widget: required for Decap's git-gateway backend.
-    Loaded synchronously from <head> so that window.netlifyIdentity is
-    available when Decap loads. The custom init() call runs after Decap has
-    attached its Identity listener, preventing Decap's fallback initializer
-    from replacing the configured API URL.
-  -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <noscript>
@@ -48,20 +40,9 @@
     </div>
   </noscript>
   <!--
-    Decap CMS script. Loads /admin/config.yml on this same path and renders
-    the editor UI. If unauthenticated it opens the git-gateway login flow.
+    Decap loads the cross-domain Identity and Git Gateway endpoints from
+    /admin/config.yml and renders its built-in login form.
   -->
   <script src="https://unpkg.com/decap-cms@^3.4.0/dist/decap-cms.js"></script>
-  <!--
-    Initialise Identity after Decap has attached its init listener. Without
-    this call the widget guesses APIUrl from window.location. Required path
-    segment: end in /.netlify/identity.
-  -->
-  <script>
-    window.netlifyIdentity.init({
-      APIUrl: 'https://brentndenisecom.netlify.app/.netlify/identity',
-      logo: false
-    });
-  </script>
 </body>
 </html>
