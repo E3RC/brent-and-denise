@@ -16,8 +16,6 @@ backend:
 # open http://localhost:8080/admin/. Production load is unaffected.
 local_backend: true
 
-publish_mode: editorial_workflow
-
 # Where uploaded images land (relative to repo root) and how they're referenced
 # in post frontmatter. Using a relative `public_folder` matches the existing
 # convention in posts.json (`assets/img/blog/...`).
@@ -39,7 +37,7 @@ collections:
         file: "assets/data/posts.json"
         format: "json"
         fields:
-          - label: "Posts"
+          - label: "Post"
             name: "posts"
             widget: "list"
             summary: "{{title}} — {{date}}"

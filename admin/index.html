@@ -43,6 +43,12 @@
     Decap loads the cross-domain Identity and Git Gateway endpoints from
     /admin/config.yml and renders its built-in login form.
   -->
+  <script>
+    const postEditorHash = '#/collections/posts/entries/posts-data';
+    if (!window.location.hash || ['#/', '#/workflow'].includes(window.location.hash)) {
+      window.location.replace(`${window.location.pathname}${window.location.search}${postEditorHash}`);
+    }
+  </script>
   <script src="https://unpkg.com/decap-cms@^3.4.0/dist/decap-cms.js"></script>
 </body>
 </html>

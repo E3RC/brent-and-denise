@@ -78,14 +78,8 @@ After step 7, the editor at `https://brentanddenise.com/admin/` will accept sign
 
 1. Visit `https://brentanddenise.com/admin/` (also reachable from the small "Editor" link in the footer).
 2. Sign in with the email you were invited at.
-3. Click **New Post** and fill in: **ID** (`post-5`, `post-6`, …), **Slug** (lowercase hyphenated, e.g. `first-week-in-portugal`), **Title**, **Author**, **Publish Date**, **Hero Image** (drag-and-drop), **Alt Text**, **Excerpt** (50–220 chars), **Body** (Markdown), **Tags**, **Social Links**.
+3. The post editor opens automatically. Click **Add post** and fill in: **ID** (`post-5`, `post-6`, …), **Slug** (lowercase hyphenated, e.g. `first-week-in-portugal`), **Title**, **Author**, **Publish Date**, **Hero Image** (drag-and-drop), **Alt Text**, **Excerpt** (50–220 chars), **Body** (Markdown), **Tags**, **Social Links**.
 4. Click **Publish** — Decap commits to `main` → Cloudflare Pages auto-deploys in ~30 seconds. The post appears on the home page, blog list, and its own `/#post-<slug>` URL.
-
-### Save as draft
-
-The configuration uses **editorial workflow** (Draft → In Review → Ready). To save without publishing, click **Save draft** instead of **Publish**. Drafts are committed to a `cms/<branch>` PR-style branch; promoting to Ready merges to `main`.
-
-⚠️ **Preview-deploy noise**: Every draft save creates a new branch which Cloudflare Pages will build into a preview URL like `<hash>.brent-and-denise.pages.dev`. To suppress these, in Cloudflare Pages: `Settings → Builds → Preview deployments → Disable for non-production branches`. Drafts still work; you just won't see a preview URL per save.
 
 ### Local development
 
