@@ -84,6 +84,13 @@ img {
   display: block;
 }
 
+/* The hidden attribute is display:none from the UA sheet only, so any author
+   display rule (flex, grid) silently defeats it. Views, pagination, and post
+   nav all toggle `hidden`, so enforce it once here rather than per component. */
+[hidden] {
+  display: none !important;
+}
+
 a {
   color: var(--color-accent);
   text-decoration: underline;
