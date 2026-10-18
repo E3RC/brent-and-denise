@@ -761,7 +761,7 @@ header {
       background: var(--color-accent);
       color: var(--color-bg);
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 4px;
       font-weight: 600;
       font-size: var(--text-base);
       transition: opacity 150ms ease;
