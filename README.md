@@ -21,9 +21,8 @@ A static blog website documenting our retirement planning journey and move abroa
 ```
 ├── index.html           # Single HTML entry point (all views)
 ├── 404.html             # Cloudflare Pages custom 404 page
-├── _redirects           # SPA redirect rules
-├── sitemap.xml          # SEO sitemap
-├── feed.xml             # Atom/RSS feed
+├── sitemap.xml          # SEO sitemap (generated, do not edit by hand)
+├── feed.xml             # Atom/RSS feed (generated, do not edit by hand)
 ├── favicon.ico          # Site favicon
 ├── admin/
 │   ├── index.html       # Decap CMS loader page (served at /admin/)
@@ -37,6 +36,8 @@ A static blog website documenting our retirement planning journey and move abroa
 │   │   └── posts.json   # Blog post content
 │   └── img/             # Image assets
 │       └── blog/        # Blog post images
+├── scripts/
+│   └── generate-feeds.mjs  # Rebuilds feed.xml + sitemap.xml from posts.json
 └── README.md
 ```
 
@@ -79,7 +80,7 @@ After step 7, the editor at `https://brentanddenise.com/admin/` will accept sign
 1. Visit `https://brentanddenise.com/admin/` (also reachable from the small "Editor" link in the footer).
 2. Sign in with the email you were invited at.
 3. The post editor opens automatically. Click **Add post** and fill in: **ID** (`post-5`, `post-6`, …), **Slug** (lowercase hyphenated, e.g. `first-week-in-portugal`), **Title**, **Author**, **Publish Date**, **Hero Image** (drag-and-drop), **Alt Text**, **Excerpt** (50–220 chars), **Body** (Markdown), **Tags**, **Social Links**.
-4. Click **Publish** — Decap commits to `main` → Cloudflare Pages auto-deploys in ~30 seconds. The post appears on the home page, blog list, and its own `/#post-<slug>` URL.
+4. Click **Publish** — Decap commits to `main` → Cloudflare Pages auto-deploys in ~30 seconds. The post appears on the home page, blog list, and its own `/#post-<slug>` URL. Posts are sorted newest first by publish date, so the new one lands at the top regardless of where it sits in `posts.json`. Then pull the commit locally, run `node scripts/generate-feeds.mjs`, and commit the updated `feed.xml` and `sitemap.xml`.
 
 ### Local development
 
@@ -93,9 +94,15 @@ decap-server
 
 Then open `http://localhost:8080/admin/` (served by `decap-server`) while a static server (`npx serve .`) runs on a different port. Edits land in your local checkout instead of GitHub.
 
-### Updating the RSS feed
+### Feeds and sitemap
 
-`feed.xml` is currently hand-maintained. After publishing a new post, append a new `<entry>` block to `feed.xml` with the post's title, link, id, and updated date. See the existing entries for the format. (A script that auto-regenerates `feed.xml` from `posts.json` is a future improvement; the per-post `body` markdown in the CMS is already ready for it to consume.)
+`feed.xml` and `sitemap.xml` are generated from `posts.json`, so they cannot drift from the published posts:
+
+```bash
+node scripts/generate-feeds.mjs
+```
+
+Run it after each publish (the CMS writes only `posts.json`), then commit the two regenerated files. The script requires Node 18+ and has no dependencies. It validates the data first: duplicate ids or slugs, malformed dates, missing fields, and missing image files make it exit non-zero and write nothing. Both files sort posts newest first, matching the site.
 
 ## Privacy & Security Notes
 
@@ -135,7 +142,7 @@ The site auto-deploys from GitHub to Cloudflare Pages on every push to `main`.
 - **Dark mode persistence**: Preference is saved for 365 days via cookie (`SameSite=Lax`, no `localStorage`/`sessionStorage`). Defaults to system `prefers-color-scheme` on first visit; the toggle button (sun/moon in the header) flips the preference and a `<head>`-inline script applies it before paint to prevent flash.
 - **Contact form**: Uses `mailto:` which requires a configured mail app. Cloudflare Pages Function can be added later for server-side handling.
 - **Content management**: Posts are edited in-browser through Decap CMS at `/admin/` (see "Authoring Posts" above). The CMS is git-backed: every publish is a commit to `main` that triggers a Cloudflare Pages redeploy. The "Editor" link in the footer takes authors to the CMS.
-- **`feed.xml` is hand-maintained**: After publishing a new post via Decap, append a new `<entry>` block to `feed.xml` for RSS subscribers. Auto-regenerating it from `posts.json` is a planned improvement.
+- **Feed/sitemap regeneration is manual**: the CMS writes only `posts.json`. After each publish, pull the commit, run `node scripts/generate-feeds.mjs`, and commit `feed.xml` + `sitemap.xml` (see [Feeds and sitemap](#feeds-and-sitemap)).
 - **Editorial-workflow preview deploys**: Each "Save Draft" creates a Cloudflare Pages preview deploy. Disable preview deploys for non-`main` branches in Cloudflare Pages settings to suppress the noise (see the Authoring Posts section).
 
 ## License
