@@ -142,10 +142,12 @@ The site auto-deploys from GitHub to Cloudflare Pages on every push to `main`.
 The full spec lives in [DESIGN.md](DESIGN.md): tokens in YAML frontmatter plus sections for colors, typography, layout, elevation, shapes, components, and do's/don'ts. `.impeccable/design.json` carries the extensions that the spec's schema cannot hold (tonal ramps, motion, breakpoints, component snippets).
 
 - One stylesheet, `assets/css/style.css`: tokens, base, layout, and every component. There are no inline `<style>` blocks.
+- Field-guide identity: cool mist ground, canopy green accent, reef and sun used only for position. No warm cream and no terracotta.
+- Type is self-hosted in `assets/fonts/`: Archivo (400 to 900) for display and controls, Literata (300 to 700) for reading. No Google Fonts request at runtime.
 - CSS custom properties for all colors (oklch), spacing (4px scale), typography (clamp() scale)
 - Light/dark mode via `data-theme` attribute on `<html>`
-- Mobile-first responsive: breakpoints at 376px, 768px, 1024px
-- Max heading size: --text-xl (36px clamp)
+- Mobile-first responsive: breakpoints at 376px, 768px, 900px (hero), and 1024px
+- Display type runs up to 58px in uppercase; labels are tracked small caps
 - All interactive elements: min 44×44px touch targets
 - Every text token clears WCAG 4.5:1 against its background in both themes
 

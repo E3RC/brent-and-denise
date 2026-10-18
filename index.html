@@ -29,6 +29,8 @@
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
+  <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/literata-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" href="/favicon.ico" type="image/svg+xml">
 </head>
@@ -86,12 +88,28 @@
       <!-- Hero -->
       <div class="container">
         <div class="hero">
-          <h1>We're Leaving America. Here's Why.</h1>
-          <p>Follow Brent &amp; Denise as we plan our retirement, navigate the move abroad, and build a new life — one that our savings can actually support.</p>
-          <div class="hero-actions">
-            <a href="#about" class="btn-primary">Read Our Story</a>
-            <a href="#blog" class="btn-secondary">Follow Along</a>
+          <div class="hero-copy">
+            <h1>We're Leaving America. Here's Why.</h1>
+            <p>Follow Brent and Denise as they plan a retirement their savings can support, choose a country, and build a new life abroad.</p>
+            <div class="hero-actions">
+              <a href="#about" class="btn-primary">Read Our Story</a>
+              <a href="#blog" class="btn-secondary">Follow Along</a>
+            </div>
           </div>
+          <figure class="hero-figure">
+            <svg viewBox="0 0 560 300" aria-hidden="true" focusable="false" role="presentation">
+              <path class="profile-axis" d="M32 260H528"/>
+              <path class="profile-tick" d="M32 252V268"/>
+              <path class="profile-tick" d="M264 252V268"/>
+              <path class="profile-tick" d="M528 252V268"/>
+              <path class="profile-fill" d="M32 240L264 150L528 64V260H32Z"/>
+              <path class="profile-route" d="M32 240L264 150L528 64"/>
+              <rect class="profile-waypoint is-current" x="27" y="235" width="10" height="10"/>
+              <rect class="profile-waypoint is-future" x="259" y="145" width="10" height="10"/>
+              <rect class="profile-waypoint" x="523" y="59" width="10" height="10"/>
+            </svg>
+            <figcaption>Route profile: today, Denise retires in 2027, Brent in 2031</figcaption>
+          </figure>
         </div>
       </div>
 
@@ -183,7 +201,7 @@
           <h2>Where We're Going</h2>
           <p>We're still researching our destination! We'll share our process, the countries we're considering, and how we make the final decision. Check back often for updates.</p>
           <div class="destination-placeholder">
-            <p>Destination — TBD</p>
+            <p>Destination: TBD</p>
           </div>
         </div>
 
@@ -288,7 +306,7 @@
         <div id="posts-container" class="posts-grid" aria-live="polite"></div>
 
         <div id="posts-empty" class="posts-empty" hidden>
-          <p>No posts yet — check back soon! In the meantime, follow us on Instagram.</p>
+          <p>No posts yet. Check back soon! In the meantime, follow us on Instagram.</p>
           <a href="https://instagram.com/brentanddenise" target="_blank" rel="noopener noreferrer" class="read-more">Follow @brentanddenise</a>
         </div>
 
@@ -306,7 +324,7 @@
     <section id="view-contact" hidden>
       <div class="container">
         <h1>Get in Touch</h1>
-        <p class="contact-intro">We'd love to hear from you — whether you're planning your own retirement abroad, have questions about our journey, or just want to say hi.</p>
+        <p class="contact-intro">We'd love to hear from you, whether you're planning your own retirement abroad, have questions about our journey, or just want to say hi.</p>
 
         <form class="contact-form" action="mailto:hello@brentanddenise.com" method="post" enctype="text/plain" id="contact-form">
           <div class="form-group">
@@ -416,7 +434,7 @@
         <a href="#blog" class="post-back-link">← Back to Blog</a>
 
         <div id="post-skeleton">
-          <div class="skeleton" style="aspect-ratio:16/9; border-radius:8px; margin-bottom:24px"></div>
+          <div class="skeleton" style="aspect-ratio:16/9; border-radius:4px; margin-bottom:24px"></div>
           <div class="skeleton" style="height:40px; width:80%; margin-bottom:16px"></div>
           <div class="skeleton" style="height:20px; width:50%; margin-bottom:24px"></div>
           <div class="skeleton" style="height:200px; width:100%; margin-bottom:12px"></div>
@@ -440,11 +458,6 @@
 
   <footer>
     <div class="container">
-      <div class="footer-newsletter">
-        <h3>Join Our Journey</h3>
-        <p>Be the first to know when we publish new posts.</p>
-        <a href="mailto:hello@brentanddenise.com?subject=Subscribe" class="btn-subscribe">Subscribe</a>
-      </div>
       <div id="social-links">
         <a href="https://instagram.com/brentanddenise" target="_blank" rel="noopener" aria-label="Instagram">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="5"></circle><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"></circle></svg>

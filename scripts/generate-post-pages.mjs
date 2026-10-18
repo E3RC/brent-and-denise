@@ -142,6 +142,8 @@ for (const post of posts) {
   <link rel="alternate" type="application/atom+xml" title="Brent &amp; Denise — Retiring Abroad" href="/feed.xml">
   <link rel="icon" href="/favicon.ico" type="image/svg+xml">
   ${themeBoot}
+  <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/literata-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>

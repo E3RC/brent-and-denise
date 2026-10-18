@@ -1,33 +1,39 @@
 ---
 name: Brent & Denise — Retiring Abroad
-description: A personal retirement blog with an editorial, sun-baked warmth.
+description: A field guide to a move abroad, drawn from rainforest, reef, and limestone.
 colors:
-  terracotta-rust: "oklch(0.5 0.16 50)"
-  clay-paper: "oklch(0.958 0.014 48)"
-  plaster-surface: "oklch(0.986 0.008 55)"
-  ink-umber: "oklch(0.24 0.025 45)"
-  faded-umber: "oklch(0.46 0.03 45)"
-  dusk-clay: "oklch(0.17 0.02 45)"
-  ember: "oklch(0.72 0.15 55)"
+  mist: "oklch(0.955 0.010 170)"
+  paper: "oklch(0.988 0.004 170)"
+  paper-alt: "oklch(0.972 0.008 170)"
+  basalt: "oklch(0.22 0.02 190)"
+  lichen: "oklch(0.42 0.02 185)"
+  canopy: "oklch(0.42 0.09 155)"
+  canopy-deep: "oklch(0.32 0.08 155)"
+  reef: "oklch(0.55 0.10 210)"
+  sun: "oklch(0.72 0.13 75)"
+  night: "oklch(0.17 0.012 190)"
+  fern: "oklch(0.78 0.12 155)"
 typography:
   display:
-    fontFamily: "Georgia, 'Times New Roman', Times, serif"
-    fontSize: "clamp(1.5rem, 1.125rem + 1.875vw, 2.25rem)"
-    fontWeight: 700
-    lineHeight: 1.3
+    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(2.25rem, 1.5rem + 3.4vw, 3.6rem)"
+    fontWeight: 800
+    lineHeight: 1.08
+    letterSpacing: "-0.02em"
   body:
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif"
-    fontSize: "clamp(1rem, 0.9375rem + 0.3125vw, 1.125rem)"
+    fontFamily: "Literata, Georgia, Times New Roman, serif"
+    fontSize: "clamp(1rem, 0.96rem + 0.2vw, 1.0625rem)"
     fontWeight: 400
-    lineHeight: 1.6
+    lineHeight: 1.7
   label:
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-    fontSize: "clamp(0.875rem, 0.8125rem + 0.3125vw, 0.9375rem)"
+    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.72rem"
     fontWeight: 600
     lineHeight: 1.2
+    letterSpacing: "0.1em"
 rounded:
-  sm: "4px"
-  md: "8px"
+  sm: "2px"
+  md: "4px"
 spacing:
   xs: "4px"
   sm: "8px"
@@ -37,31 +43,31 @@ spacing:
   section: "64px"
 components:
   button-primary:
-    backgroundColor: "{colors.terracotta-rust}"
-    textColor: "{colors.plaster-surface}"
+    backgroundColor: "{colors.canopy}"
+    textColor: "{colors.mist}"
     rounded: "{rounded.sm}"
     padding: "8px 24px"
     height: "44px"
   button-secondary:
     backgroundColor: "transparent"
-    textColor: "{colors.terracotta-rust}"
+    textColor: "{colors.canopy}"
     rounded: "{rounded.sm}"
     padding: "8px 24px"
     height: "44px"
   tag-filter:
     backgroundColor: "transparent"
-    textColor: "{colors.faded-umber}"
+    textColor: "{colors.lichen}"
     rounded: "{rounded.sm}"
-    padding: "4px 16px"
+    padding: "0 16px"
     height: "44px"
   post-card:
-    backgroundColor: "{colors.plaster-surface}"
-    textColor: "{colors.ink-umber}"
-    rounded: "{rounded.sm}"
-    padding: "16px"
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.basalt}"
+    rounded: "{rounded.md}"
+    padding: "20px"
   input:
-    backgroundColor: "{colors.plaster-surface}"
-    textColor: "{colors.ink-umber}"
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.basalt}"
     rounded: "{rounded.sm}"
     padding: "8px 12px"
     height: "44px"
@@ -71,108 +77,117 @@ components:
 
 ## Overview
 
-**Creative North Star: "The Sun-Baked Letter"**
+**Creative North Star: "The Field Guide"**
 
-The site reads like a letter written from a warmer place: clay-toned paper, ink-brown prose, and serif headings that carry a human voice. It is a reading surface first. Every screen exists so a visitor can follow one couple's move abroad, so ornament stays out of the way of the sentences.
+The site is a field guide for a move, not a travel brochure. It borrows the discipline of an expedition log: cool mist light, hairline rules, square waypoint markers, and a route profile that shows the journey in one glance. The three landscapes behind the identity are the Costa Rican canopy, the Belizean reef, and Italian limestone, which appear as the canopy green accent, the reef teal waypoint, and the sun-marked current position.
 
-Warmth comes from the palette and the serif, not from decoration. Surfaces are flat and separated by hairlines. There are no gradients, shadows in active use, or illustrated scenes. The terracotta accent is the only saturated color on the page, and it marks what can be acted on: buttons, links, the current filter, the active timeline marker.
+Warmth is not the strategy here. The ground is intentionally cool, and the accents carry the climate: deep canopy green for action, reef teal and a single sun ochre for position. Headings are expedition signage in Archivo caps; prose is set in Literata for long reading. The only ornament is structural: rules, ticks, and a drawn route.
 
-The system was rebuilt from the incumbent implementation. It preserves the original identity of warm ground plus serif voice, and moves the background from a neutral cream to a rosier clay paper. The Impeccable detector still reads any warm light background as a cream palette; that warning is accepted deliberately here, because the warm ground is the identity the brief asks for and the accent, text, and surface tokens carry the contrast work.
+This world replaced a warm cream, Georgia, terracotta system that sat directly on the model-default cluster. The replacement was deliberate, and the old palette is an anti-reference.
 
 **Key Characteristics:**
-- Clay paper ground, ink umber text, one terracotta accent.
-- Georgia for headings, the platform sans for body and labels.
-- Flat surfaces with 1px alpha borders; no shadows in practice.
-- 44px minimum touch targets everywhere.
-- Mobile-first, two-column grid only from 768px.
+- Cool mist ground, basalt text, canopy green action.
+- Archivo caps for display and controls, Literata for reading.
+- Flat surfaces with hairline borders and 2px structural rules.
+- Square markers, not circles, for waypoints and the current stop.
+- One authored motion: the route profile draws once on load.
 
 ## Colors
 
-A single-hue warm family, stepped by lightness: clay paper and plaster for surfaces, umber for text, rust for action.
+A cool light family with three landscape accents, each with one job.
 
 ### Primary
-- **Terracotta Rust**: the one accent. Buttons, links, active filter state, focus ring, timeline marker. It is deliberately darker than a display orange so text on it stays legible.
+- **Canopy**: links, primary buttons, active filter fill, focus ring. It is the action color and the only accent used for interactive text.
+
+### Secondary
+- **Reef Teal**: the 2027 waypoint in the route profile, and future-facing markers. Never used for text.
+
+### Tertiary
+- **Sun Ochre**: the current position marker and the current timeline stop. Never used for text on light surfaces.
 
 ### Neutral
-- **Clay Paper**: page background in light mode. Warm but pink-shifted, not the standard cream.
-- **Plaster Surface**: cards, inputs, and the inner border of the timeline marker. One step lighter than the page.
-- **Ink Umber**: headings and body text.
-- **Faded Umber**: dates, meta lines, secondary descriptions. Chosen to clear 4.5:1, not to look grey.
-- **Dusk Clay**: page background in dark mode.
-- **Ember**: the accent in dark mode. Brighter than the light-mode rust because it sits on a dark ground.
+- **Mist**: page background in light mode.
+- **Paper** and **Paper Alt**: cards, inputs, code, and inset blocks.
+- **Basalt**: headings and body text.
+- **Lichen**: dates, meta, secondary descriptions.
+- **Night**: page background in dark mode, with **Fern** replacing Canopy.
 
 ### Named Rules
-**The One Accent Rule.** Terracotta covers under 10 percent of any screen. If a second element wants it, that element wants an underline, a border, or weight instead.
+**The Cool Ground Rule.** The light background stays cool. Any warm near-white returns the site to the cluster it was rebuilt to escape.
 
-**The Contrast Floor Rule.** Body and meta text clear 4.5:1, and so does light text on accent fills. Test the accent as link text on the page background before using it as a background.
+**The One Action Color Rule.** Canopy marks what can be acted on. Reef and sun are for position and sequence only; if they appear on a control, the sequence is lying.
 
 ## Typography
 
-**Display Font:** Georgia (with Times New Roman, Times, serif)
-**Body Font:** the platform sans stack (Segoe UI, Roboto, Helvetica)
-**Label Font:** the same sans stack, at label sizes and weights
+**Display Font:** Archivo (self-hosted latin subset, weights 400 to 900)
+**Body Font:** Literata (self-hosted latin subset, weights 300 to 700)
 
-**Character:** a literary serif for names and titles against a plain reading sans. The pairing says personal essay, not product page.
+**Character:** signage plus reading. Archivo gives the page a trailhead placard voice; Literata keeps a long post readable at 68 characters. Neither is a system fallback in practice.
 
 ### Hierarchy
-- **Display** (700, clamp 24px to 36px, 1.3): page titles and post titles. Capped at 36px; the scale never gets theatrical.
-- **Title** (700, clamp 18px to 22px, 1.3): section headings and card titles.
-- **Body** (400, clamp 16px to 18px, 1.6): prose. Post content is held to 720px, about 70 characters at desktop size.
-- **Label** (600, clamp 14px to 15px, 1.2): buttons, filters, metadata, form labels.
+- **Display** (800, clamp 36px to 58px, 1.08, -0.02em, uppercase): page and post titles.
+- **Title** (700, clamp 22px to 28px, 1.08): section headings and card titles.
+- **Body** (400, 16px to 17px, 1.7): prose, capped at 68ch.
+- **Label** (600, 11.5px to 12px, 0.1em tracking, uppercase): nav, buttons, filters, dates, metadata.
 
 ### Named Rules
-**The Voice Is Serif Rule.** Headings and the site name are serif. Everything that behaves like a control or a caption is sans. Do not set a button in Georgia.
+**The Two-Voice Rule.** Archivo for anything that behaves like signage or a control; Literata for anything meant to be read at length. Do not set a paragraph in Archivo or a button in Literata.
+
+**The Caps Budget Rule.** Uppercase is reserved for display, labels, and short headings. No uppercase body copy, no all-caps paragraphs.
 
 ## Layout
 
-A single centered column, max 1040px, with 16px gutters rising to 24px, 32px, then 48px at 376px, 768px, and 1024px. Sections stack with 64px separation. Cards and post lists switch to two columns at 768px and never exceed two. Post bodies narrow to 720px regardless of viewport. The mobile header wraps: logo on its own line, nav beneath, theme toggle top right.
+One centered column, max 1120px, gutters from 20px to 48px. Sections separate with 64px. The hero is a two-column grid from 900px: copy left, route profile right. Post lists are one column to 768px, two from there, never three. Post bodies narrow to 68ch. The mobile header keeps the logo and theme toggle on one row, with nav wrapping beneath.
 
 ## Elevation & Depth
 
-The system is flat. Depth is a hairline border and a one-step surface change, never a shadow. Shadow tokens exist in CSS from the original build but no component uses them; treat them as unused and do not add elevation without replacing this rule deliberately.
+Strictly flat. There are no shadows in the system. Depth comes from three devices only: a 1px hairline for component edges, a 2px rule for structural divisions (header bottom, footer top, post navigation), and a one-step surface change for insets. The route profile draws with a single 1100ms stroke animation, disabled under `prefers-reduced-motion`.
 
 ## Shapes
 
-Controls are 4px radius; cards, images, and the inner focus ring use 8px. Pills appear only on small controls and filters. Borders are 1px at 12 to 15 percent alpha, which keeps them visible on both themes without reading as lines. Dashed frames are not used as decoration; a dashed border means "placeholder".
+Controls use a 2px radius; cards and inputs that hold content use 4px; cards read as plates rather than pills. Waypoints, timeline markers, and the profile ticks are square, which is the identity's strongest form cue. Dashed borders are reserved for genuine placeholders, such as the unresolved destination. Circular forms appear only in the social icons and the placeholder camera glyph.
 
 ## Components
 
 ### Buttons
-- **Shape:** 4px radius, 44px minimum height, padding 8px by 24px, 600 weight.
-- **Primary:** terracotta fill, plaster text, 150ms opacity hover at 0.85 to 0.9.
-- **Secondary:** transparent fill, terracotta text and 1px border, same hover.
-- **Ghost/link:** text-only read-more and back links; 44px hit area, no underline at rest.
+- **Shape:** 2px radius, 44px minimum height, 8px by 24px padding, uppercase Archivo at 0.08em tracking.
+- **Primary:** canopy fill, mist text; hover shifts to canopy-deep.
+- **Secondary:** transparent with a 1px canopy border and canopy text; hover fills canopy.
 
 ### Chips (tag filter)
-Unselected chips are transparent with a hairline border and faded text; selected chips keep the border, switch to terracotta, and show a count in a smaller size. Height is 44px so they remain touch-safe when they wrap on mobile.
+Transparent with a 1px border and lichen text; the active chip inverts to a canopy fill with mist text, and the count stays legible at 0.75 opacity. 44px tall so wrapped rows remain touch-safe.
 
 ### Cards / Containers
-- **Corner Style:** 4px on post cards, 8px on bio cards.
-- **Background:** plaster over clay paper.
-- **Shadow Strategy:** none; see Elevation.
-- **Border:** 1px hairline.
-- **Internal Padding:** 16px (cards), 24px (bio cards).
+- **Corner Style:** 4px.
+- **Background:** paper over mist.
+- **Border:** 1px hairline, strengthening on hover or focus-within.
+- **Shadow Strategy:** none.
+- **Internal Padding:** 20px.
 
 ### Inputs / Fields
-Plaster fill, 1px hairline border, 4px radius, 44px minimum height, 12px by 8px padding. Focus shifts the border to terracotta and drops the default outline, with a 2px focus ring token for keyboard users.
+Paper fill, 1px hairline, 2px radius, 44px minimum height, 12px by 8px padding, Literata. Focus moves the border to canopy and keeps a 2px focus ring.
 
 ### Navigation
-Sans, 600 weight, 14 to 15px, 44px minimum height. The current page is indicated by a surface fill and full-strength text, not by an underline. Nav wraps to its own row under 768px; social icon links stay in one row at 44px targets.
+Uppercase Archivo at 0.78rem with 0.08em tracking, 44px rows. The current page is marked by a 2px canopy underline, not a fill. Social icons stay at 44px squares.
+
+### Route profile
+The signature component: a 560 by 300 SVG with a hairline baseline, three ticks, a filled area at 9 percent canopy, a 2px route line, and square waypoints (sun for now, reef for 2027, outlined for 2031). It is decorative and aria-hidden; the caption carries the meaning in text, and it sits beside the hero copy on desktop.
 
 ### Post page
-Back link, hero image at 16:9, serif title, meta line with author and human-readable date, then Markdown body at 720px. Share buttons sit below the body in a bordered row; the copy control confirms success in accent text for 2.4 seconds.
+Back link, 16:9 image with a hairline border, display title, uppercase meta line, Serif body at 68ch, then a 2px-ruled post navigation row and share controls.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep the accent under 10 percent of the viewport and use it to mark action.
-- **Do** verify any new text color against its actual background, including dark mode.
-- **Do** keep interactive targets at 44px minimum, including wrapped chips.
-- **Do** use the 4px spacing scale and the existing 64px section rhythm.
+- **Do** keep the light ground cool and the accents to their assigned roles.
+- **Do** verify contrast for body, meta, and text on accent fills in both themes.
+- **Do** keep every target at 44px, including wrapped chips and waypoints in the header.
+- **Do** use square markers for sequence and position.
+- **Do** let the route profile be the page's one drawn moment.
 
 ### Don't:
-- **Don't** add shadows, gradients, glass, or glow effects.
-- **Don't** set controls or captions in Georgia.
-- **Don't** use dashed borders except for deliberate placeholders.
-- **Don't** exceed two columns for cards or raise display type above 36px.
-- **Don't** introduce a second accent color.
+- **Don't** return to warm cream, beige, or terracotta.
+- **Don't** set headings in a system serif or body copy in the display face.
+- **Don't** add shadows, gradients, glass, or glow.
+- **Don't** use reef or sun for interactive text.
+- **Don't** round cards beyond 4px or turn markers into circles.

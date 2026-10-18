@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-  <rect width="16" height="16" rx="3" fill="#4f46e5"/>
-  <text x="8" y="12" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold" font-size="9" fill="#fff">BD</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <rect width="16" height="16" fill="#185b37"/>
+  <path d="M3 11.6L6.4 9.1L9.8 6.6L13 4.6" fill="none" stroke="#eef3f0" stroke-width="1.4"/>
+  <rect x="2.1" y="10.7" width="2" height="2" fill="#c98a2b"/>
+  <rect x="12.1" y="3.7" width="2" height="2" fill="#eef3f0"/>
 </svg>
