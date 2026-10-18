@@ -823,9 +823,44 @@
       font-size: var(--text-sm);
       white-space: pre-wrap;
     }
+
+    /* Skip link: hidden until focused, then lands above the header */
+    .skip-link {
+      position: absolute;
+      left: var(--space-4);
+      top: -120px;
+      z-index: 10;
+      padding: var(--space-2) var(--space-4);
+      background: var(--color-accent);
+      color: var(--color-surface);
+      border-radius: 4px;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      text-decoration: none;
+      transition: top 150ms ease;
+    }
+
+    .skip-link:focus {
+      top: var(--space-4);
+    }
+
+    .tag-count {
+      margin-left: var(--space-1);
+      font-size: var(--text-xs);
+      color: var(--color-text-secondary);
+    }
+
+    .tag-filter[data-active="true"] .tag-count {
+      color: var(--color-accent);
+    }
+
+    .copy-msg-error {
+      color: var(--color-text-secondary);
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#app">Skip to content</a>
   <header>
     <div class="container">
       <a href="#home" class="site-logo">Brent &amp; Denise</a>
@@ -890,29 +925,35 @@
       <!-- Latest Posts -->
       <div class="container section-gap">
         <h2>Latest from the Blog</h2>
+        <!-- Static fallback mirrors the 3 newest posts in assets/data/posts.json.
+             app.js replaces this block once the JSON loads; without JS (or if the
+             fetch fails) readers still get real titles, dates and links. -->
         <div id="latest-posts" class="posts-grid">
           <article class="post-card">
-            <div class="post-card-image"></div>
+            <img src="assets/img/blog/placeholder.svg" alt="A comparison chart showing monthly expenses in US dollars across different countries" width="600" height="338" loading="lazy">
             <div class="post-card-body">
-              <h3 class="post-card-title">Coming Soon</h3>
-              <p class="post-card-date">March 2026</p>
-              <p class="post-card-excerpt">Our first post is on its way. We'll be sharing our story, our plans, and everything we learn along the way.</p>
+              <h3>How Much Does It Really Cost to Live Abroad?</h3>
+              <time datetime="2026-08-20">August 20, 2026</time>
+              <p>We ran the numbers on everything &mdash; rent, groceries, utilities, healthcare, dining out &mdash; and the difference between the US and our top destination countries is staggering.</p>
+              <a href="#post-cost-of-living-comparison" class="read-more">Read More</a>
             </div>
           </article>
           <article class="post-card">
-            <div class="post-card-image"></div>
+            <img src="assets/img/blog/placeholder.svg" alt="A world map with five highlighted regions: Western Europe, Central America, Southeast Asia, and Southern Europe" width="600" height="338" loading="lazy">
             <div class="post-card-body">
-              <h3 class="post-card-title">Our Retirement Strategy</h3>
-              <p class="post-card-date">Coming Soon</p>
-              <p class="post-card-excerpt">How we're planning to make our savings last — from budget breakdowns to country comparisons.</p>
+              <h3>Top 5 Countries We're Considering for Retirement</h3>
+              <time datetime="2026-08-10">August 10, 2026</time>
+              <p>We've narrowed the list to five countries that check our boxes: affordable healthcare, reasonable cost of living, safety, and a welcoming visa path for retirees.</p>
+              <a href="#post-top-5-countries-retirement" class="read-more">Read More</a>
             </div>
           </article>
           <article class="post-card">
-            <div class="post-card-image"></div>
+            <img src="assets/img/blog/placeholder.svg" alt="A calendar with dates circled and a plane icon marking December 2027" width="600" height="338" loading="lazy">
             <div class="post-card-body">
-              <h3 class="post-card-title">Why We Chose Portugal</h3>
-              <p class="post-card-date">Coming Soon</p>
-              <p class="post-card-excerpt">The factors that led us to consider Portugal as our new home, from cost of living to healthcare to visa options.</p>
+              <h3>Our Retirement Timeline &mdash; The Countdown Begins</h3>
+              <time datetime="2026-07-30">July 30, 2026</time>
+              <p>Denise has a date locked in. Brent is five years behind. Here's our plan for making two retirements work on one timeline.</p>
+              <a href="#post-our-retirement-timeline" class="read-more">Read More</a>
             </div>
           </article>
         </div>
@@ -959,10 +1000,10 @@
 
         <div class="about-section">
           <h2>Why We're Leaving America</h2>
-          <p>This isn't a decision we made lightly. We've spent years talking through what our future looks like, and the more we planned, the clearer it became that the life we want is somewhere else. It's not about running away — it's about running toward something better.</p>
-          <p>The rising cost of living has made it harder to save at the pace we need. Even with solid jobs and careful budgeting, housing, groceries, insurance, and utilities keep eating up more of our income. We've watched our retirement projections shift year after year, and the math just doesn't add up the way it used to.</p>
-          <p>Healthcare is the biggest unknown. We've seen too many retirement plans derailed by medical costs, and the older we get, the more that uncertainty weighs on us. Countries with universal healthcare systems offer a stability we can't find here — and that peace of mind is worth more than we can put into words.</p>
-          <p>But beyond the numbers, we want a simpler life. Less stress, more time outside, deeper connections with each other and the communities we join. We want to wake up excited about the day ahead, not worried about the next bill. That's the future we're building, one step at a time.</p>
+          <p>We didn't decide this in a weekend. We've spent years talking through what our future looks like, and every round of planning pointed the same way: the life we want is somewhere else.</p>
+          <p>Housing, groceries, insurance and utilities take a bigger share of our income every year, even with steady jobs and a budget we stick to. We've re-run the retirement projections each year, and they keep landing short of what we hoped.</p>
+          <p>Healthcare is the part we can't plan around. We've seen other people's retirement plans come apart over medical costs, and the uncertainty grows as we get older. Countries with universal coverage offer a stability we can't find here.</p>
+          <p>Beyond the numbers, we want a simpler life: less stress, more time outside, closer ties with each other and with whatever community we join. We want to wake up thinking about the day ahead instead of the next bill.</p>
         </div>
 
         <div class="about-section">
@@ -1071,7 +1112,7 @@
           </div>
         </div>
 
-        <div id="posts-container" class="posts-grid"></div>
+        <div id="posts-container" class="posts-grid" aria-live="polite"></div>
 
         <div id="posts-empty" class="posts-empty" hidden>
           <p>No posts yet — check back soon! In the meantime, follow us on Instagram.</p>
