@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-18T22:35:00Z",
+  "title": "Design System: Brent & Denise — Retiring Abroad",
+  "extensions": {
+    "colorMeta": {
+      "terracotta-rust": {
+        "role": "primary",
+        "displayName": "Terracotta Rust",
+        "canonical": "oklch(0.5 0.16 50)",
+        "tonalRamp": ["oklch(0.15 0.16 50)", "oklch(0.26 0.16 50)", "oklch(0.37 0.16 50)", "oklch(0.48 0.16 50)", "oklch(0.6 0.16 50)", "oklch(0.72 0.16 50)", "oklch(0.84 0.16 50)", "oklch(0.95 0.16 50)"]
+      },
+      "clay-paper": {
+        "role": "neutral",
+        "displayName": "Clay Paper",
+        "canonical": "oklch(0.958 0.014 48)",
+        "tonalRamp": ["oklch(0.15 0.014 48)", "oklch(0.26 0.014 48)", "oklch(0.37 0.014 48)", "oklch(0.48 0.014 48)", "oklch(0.6 0.014 48)", "oklch(0.72 0.014 48)", "oklch(0.84 0.014 48)", "oklch(0.95 0.014 48)"]
+      },
+      "plaster-surface": {
+        "role": "neutral",
+        "displayName": "Plaster Surface",
+        "canonical": "oklch(0.986 0.008 55)",
+        "tonalRamp": ["oklch(0.15 0.008 55)", "oklch(0.26 0.008 55)", "oklch(0.37 0.008 55)", "oklch(0.48 0.008 55)", "oklch(0.6 0.008 55)", "oklch(0.72 0.008 55)", "oklch(0.84 0.008 55)", "oklch(0.95 0.008 55)"]
+      },
+      "ink-umber": {
+        "role": "neutral",
+        "displayName": "Ink Umber",
+        "canonical": "oklch(0.24 0.025 45)",
+        "tonalRamp": ["oklch(0.15 0.025 45)", "oklch(0.26 0.025 45)", "oklch(0.37 0.025 45)", "oklch(0.48 0.025 45)", "oklch(0.6 0.025 45)", "oklch(0.72 0.025 45)", "oklch(0.84 0.025 45)", "oklch(0.95 0.025 45)"]
+      },
+      "faded-umber": {
+        "role": "neutral",
+        "displayName": "Faded Umber",
+        "canonical": "oklch(0.46 0.03 45)",
+        "tonalRamp": ["oklch(0.15 0.03 45)", "oklch(0.26 0.03 45)", "oklch(0.37 0.03 45)", "oklch(0.48 0.03 45)", "oklch(0.6 0.03 45)", "oklch(0.72 0.03 45)", "oklch(0.84 0.03 45)", "oklch(0.95 0.03 45)"]
+      },
+      "dusk-clay": {
+        "role": "neutral",
+        "displayName": "Dusk Clay",
+        "canonical": "oklch(0.17 0.02 45)",
+        "tonalRamp": ["oklch(0.15 0.02 45)", "oklch(0.26 0.02 45)", "oklch(0.37 0.02 45)", "oklch(0.48 0.02 45)", "oklch(0.6 0.02 45)", "oklch(0.72 0.02 45)", "oklch(0.84 0.02 45)", "oklch(0.95 0.02 45)"]
+      },
+      "ember": {
+        "role": "primary",
+        "displayName": "Ember",
+        "canonical": "oklch(0.72 0.15 55)",
+        "tonalRamp": ["oklch(0.15 0.15 55)", "oklch(0.26 0.15 55)", "oklch(0.37 0.15 55)", "oklch(0.48 0.15 55)", "oklch(0.6 0.15 55)", "oklch(0.72 0.15 55)", "oklch(0.84 0.15 55)", "oklch(0.95 0.15 55)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page and post titles only; capped at 36px." },
+      "body": { "displayName": "Body", "purpose": "Reading surface, 720px measure for posts." },
+      "label": { "displayName": "Label", "purpose": "Controls, filters, metadata, form labels." }
+    },
+    "shadows": [
+      { "name": "shadow-sm", "value": "0 1px 2px oklch(0.15 0.015 65 / 0.06), 0 1px 3px oklch(0.15 0.015 65 / 0.1)", "purpose": "Reserved. No component uses it; the system is flat." },
+      { "name": "shadow-md", "value": "0 4px 6px oklch(0.15 0.015 65 / 0.06), 0 2px 4px oklch(0.15 0.015 65 / 0.08)", "purpose": "Reserved." },
+      { "name": "shadow-lg", "value": "0 10px 15px oklch(0.15 0.015 65 / 0.06), 0 4px 6px oklch(0.15 0.015 65 / 0.04)", "purpose": "Reserved." }
+    ],
+    "motion": [
+      { "name": "state-transition", "value": "150ms ease", "purpose": "Hover, border, and color changes on controls and links." },
+      { "name": "theme-transition", "value": "200ms ease", "purpose": "Body text and background when the theme flips." }
+    ],
+    "breakpoints": [
+      { "name": "xs", "value": "376px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The main action on a view: subscribe, submit, visit.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#about\">Read Our Story</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; padding: 8px 24px; background: var(--color-accent); color: var(--color-surface); border-radius: 4px; font-family: var(--font-body); font-size: var(--text-base); font-weight: 600; text-decoration: none; transition: opacity 150ms ease; } .ds-btn-primary:hover { opacity: 0.9; } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "The lower-commitment action beside a primary button.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#blog\">Follow Along</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px; padding: 8px 24px; background: transparent; color: var(--color-accent); border: 1px solid var(--color-accent); border-radius: 4px; font-family: var(--font-body); font-size: var(--text-base); font-weight: 600; text-decoration: none; transition: opacity 150ms ease; } .ds-btn-secondary:hover { opacity: 0.85; }"
+    },
+    {
+      "name": "Tag Filter",
+      "kind": "chip",
+      "refersTo": "tag-filter",
+      "description": "Filter chip on the blog list; selected state marks the active tag.",
+      "html": "<button class=\"ds-tag\" data-active=\"true\">All</button> <button class=\"ds-tag\">retirement <span class=\"ds-tag-count\">2</span></button>",
+      "css": ".ds-tag { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 4px 16px; background: transparent; color: var(--color-text-secondary); border: 1px solid var(--color-border); border-radius: 4px; font-size: var(--text-sm); font-family: var(--font-body); cursor: pointer; transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease; } .ds-tag[data-active=\"true\"], .ds-tag:hover { color: var(--color-text); border-color: var(--color-accent); background-color: var(--color-surface); } .ds-tag-count { margin-left: 4px; font-size: var(--text-xs); color: var(--color-text-secondary); } .ds-tag[data-active=\"true\"] .ds-tag-count { color: var(--color-accent); }"
+    },
+    {
+      "name": "Post Card",
+      "kind": "card",
+      "refersTo": "post-card",
+      "description": "The listing unit for a post: 16:9 image, serif title, date, excerpt, read-more link.",
+      "html": "<article class=\"ds-card\"><img class=\"ds-card-img\" src=\"assets/img/blog/placeholder.svg\" alt=\"\"><div class=\"ds-card-body\"><h3 class=\"ds-card-title\">How Much Does It Really Cost to Live Abroad?</h3><time class=\"ds-card-date\">August 20, 2026</time><p class=\"ds-card-excerpt\">We ran the numbers on rent, groceries, utilities, healthcare and dining out.</p><a class=\"ds-card-link\" href=\"#\">Read More</a></div></article>",
+      "css": ".ds-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 4px; overflow: hidden; } .ds-card-img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; } .ds-card-body { padding: 16px; } .ds-card-title { font-family: var(--font-heading); font-size: var(--text-lg); color: var(--color-text); margin: 0 0 8px; } .ds-card-date { display: block; font-size: var(--text-sm); color: var(--color-text-secondary); margin-bottom: 8px; } .ds-card-excerpt { font-size: var(--text-sm); color: var(--color-text-secondary); margin: 0 0 12px; } .ds-card-link { display: inline-flex; align-items: center; min-height: 44px; font-size: var(--text-sm); font-weight: 600; color: var(--color-accent); }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Contact form input and textarea.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Name</span><input class=\"ds-input\" type=\"text\" placeholder=\"Brent\"></label>",
+      "css": ".ds-field { display: block; } .ds-field-label { display: block; margin-bottom: 4px; font-size: var(--text-sm); font-weight: 600; color: var(--color-text); } .ds-input { display: block; width: 100%; min-height: 44px; padding: 8px 12px; background: var(--color-surface); color: var(--color-text); border: 1px solid var(--color-border); border-radius: 4px; font-family: var(--font-body); font-size: var(--text-base); } .ds-input:focus { border-color: var(--color-accent); outline: none; } .ds-input:focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }"
+    },
+    {
+      "name": "Site Navigation",
+      "kind": "nav",
+      "refersTo": "tag-filter",
+      "description": "Header nav with the current page indicated by surface fill, plus the theme toggle.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" aria-current=\"page\" href=\"#\">Blog</a><a class=\"ds-nav-link\" href=\"#\">About</a></nav>",
+      "css": ".ds-nav { display: flex; flex-wrap: wrap; gap: 4px; } .ds-nav-link { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 4px 12px; border-radius: 4px; color: var(--color-text-secondary); font-size: var(--text-sm); text-decoration: none; transition: color 150ms ease, background-color 150ms ease; } .ds-nav-link:hover, .ds-nav-link[aria-current=\"page\"] { color: var(--color-text); background-color: var(--color-surface); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Sun-Baked Letter",
+    "overview": "The site reads like a letter written from a warmer place: clay-toned paper, ink-brown prose, and serif headings that carry a human voice. It is a reading surface first. Every screen exists so a visitor can follow one couple's move abroad, so ornament stays out of the way of the sentences. Warmth comes from the palette and the serif, not from decoration. Surfaces are flat and separated by hairlines. There are no gradients, shadows in active use, or illustrated scenes. The terracotta accent is the only saturated color on the page, and it marks what can be acted on.",
+    "keyCharacteristics": [
+      "Clay paper ground, ink umber text, one terracotta accent.",
+      "Georgia for headings, the platform sans for body and labels.",
+      "Flat surfaces with 1px alpha borders; no shadows in practice.",
+      "44px minimum touch targets everywhere.",
+      "Mobile-first, two-column grid only from 768px."
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Terracotta covers under 10 percent of any screen. If a second element wants it, that element wants an underline, a border, or weight instead.", "section": "colors" },
+      { "name": "The Contrast Floor Rule", "body": "Body and meta text clear 4.5:1, and so does light text on accent fills. Test the accent as link text on the page background before using it as a background.", "section": "colors" },
+      { "name": "The Voice Is Serif Rule", "body": "Headings and the site name are serif. Everything that behaves like a control or a caption is sans. Do not set a button in Georgia.", "section": "typography" }
+    ],
+    "dos": [
+      "Do keep the accent under 10 percent of the viewport and use it to mark action.",
+      "Do verify any new text color against its actual background, including dark mode.",
+      "Do keep interactive targets at 44px minimum, including wrapped chips.",
+      "Do use the 4px spacing scale and the existing 64px section rhythm."
+    ],
+    "donts": [
+      "Don't add shadows, gradients, glass, or glow effects.",
+      "Don't set controls or captions in Georgia.",
+      "Don't use dashed borders except for deliberate placeholders.",
+      "Don't exceed two columns for cards or raise display type above 36px.",
+      "Don't introduce a second accent color."
+    ]
+  }
+}
