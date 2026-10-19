@@ -114,6 +114,17 @@ That writes three things:
 
 Run it after each publish (the CMS writes only `posts.json`), then commit the results. The scripts need Node 18+ and have no dependencies. `generate-feeds.mjs` validates the data first: duplicate ids or slugs, malformed dates, missing fields, and missing image files make it exit non-zero and write nothing. `generate-post-pages.mjs` renders a Markdown subset (paragraphs, headings, lists, quotes, links, images, inline emphasis, code), which covers what the CMS produces.
 
+### Photos
+
+The CMS owns photos. The **Hero Image** field accepts a file picker or drag-and-drop, writes the file into `assets/img/blog/`, and stores `assets/img/blog/<file>` in `posts.json`. Publishing is all that is required.
+
+- Crop or export to 16:9, 1600 to 2400 px wide. Cards and post pages crop to 16:9, so a portrait phone photo loses its top and bottom.
+- Keep files under about 500 KB. `node scripts/build-content.mjs` warns above that, because originals are committed to git history and every visitor downloads the hero.
+- Write real alt text in the CMS field. It is used on cards, post pages, and social previews.
+- Once a post has a raster hero (`.jpg`, `.png`, `.webp`, `.avif`), `/post/<slug>/` uses that photo as its Open Graph and Twitter image. While the hero is the SVG placeholder, the post falls back to the shared site card, because social platforms ignore SVG.
+
+The site's generated URLs stay stable through all of this. `/post/<slug>/` is wired from `posts.json` alone, so swapping the placeholder for a real photo needs only a publish and a rebuild.
+
 ## Privacy & Security Notes
 
 - The CMS at `/admin/` exposes only a sign-in screen to anonymous visitors — no data leak.

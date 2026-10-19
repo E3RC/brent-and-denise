@@ -10,7 +10,7 @@
 // Exits non-zero and writes nothing if the data has problems, so a broken
 // post cannot ship a half-valid feed.
 
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -83,6 +83,14 @@ posts.forEach((post, index) => {
 
   if (post.image && !/^https?:\/\//i.test(post.image) && !existsSync(join(root, post.image))) {
     fail(`${label}: image not found at "${post.image}".`);
+  }
+
+  // Phone photos land at 3 to 8 MB, which is 20x the page's other assets.
+  if (post.image && !/^https?:\/\//i.test(post.image) && existsSync(join(root, post.image))) {
+    const bytes = statSync(join(root, post.image)).size;
+    if (bytes > 500 * 1024) {
+      warnings.push(`${label}: image is ${Math.round(bytes / 1024)} KB, above the 500 KB target.`);
+    }
   }
 
   if (post.tags !== undefined && !Array.isArray(post.tags)) {

@@ -117,6 +117,17 @@ for (const post of posts) {
   const description = post.excerpt || '';
   const published = `${post.date}T00:00:00Z`;
 
+  // Social cards cannot render SVG, so the shared OG image stays the fallback
+  // until a post has a raster hero. Once the CMS uploads a real photo, that
+  // photo becomes the post's preview.
+  const localImage = String(post.image || '').replace(/^\/+/, '');
+  const isRaster = /\.(png|jpe?g|webp|avif)$/i.test(localImage);
+  const socialImage = isRaster
+    ? (/^https?:\/\//i.test(localImage) ? localImage : `${siteUrl}/${localImage}`)
+    : `${siteUrl}/assets/img/og-image.png`;
+  const socialImageAlt = post.alt || 'Brent and Denise, Retiring Abroad';
+  const defaultImage = socialImage === `${siteUrl}/assets/img/og-image.png`;
+
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,16 +140,15 @@ for (const post of posts) {
   <meta property="og:title" content="${escapeHtml(post.title)}">
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:url" content="${pageUrl}">
-  <meta property="og:image" content="${siteUrl}/assets/img/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Brent and Denise, Retiring Abroad">
+  <meta property="og:image" content="${socialImage}">
+${defaultImage ? '  <meta property="og:image:width" content="1200">\n  <meta property="og:image:height" content="630">\n' : ''}  <meta property="og:image:alt" content="${escapeHtml(socialImageAlt)}">
   <meta property="og:site_name" content="Brent &amp; Denise">
   <meta property="article:published_time" content="${published}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(post.title)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">
-  <meta name="twitter:image" content="${siteUrl}/assets/img/og-image.png">
+  <meta name="twitter:image" content="${socialImage}">
+  <meta name="twitter:image:alt" content="${escapeHtml(socialImageAlt)}">
   <link rel="alternate" type="application/atom+xml" title="Brent &amp; Denise — Retiring Abroad" href="/feed.xml">
   <link rel="icon" href="/favicon.ico" type="image/svg+xml">
   ${themeBoot}
